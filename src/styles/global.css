@@ -580,30 +580,33 @@ article h2 {
   white-space: pre;
 }
 
-
 /* Hobbies*/
 #hobbies {
-	--section-accent: #facc15;
+  --section-accent: #facc15;
 }
 
 .crew-section {
-	background:
-		linear-gradient(rgba(3, 16, 20, 0.92), rgba(3, 16, 20, 0.92)),
-		radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 32%);
+  background:
+    linear-gradient(rgba(3, 16, 20, 0.92), rgba(3, 16, 20, 0.92)),
+    radial-gradient(
+      circle at top left,
+      rgba(250, 204, 21, 0.16),
+      transparent 32%
+    );
 }
 
 .hobbies-grid {
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .hobby-card {
-	border-color: color-mix(in srgb, #facc15 35%, var(--border));
+  border-color: color-mix(in srgb, #facc15 35%, var(--border));
 }
 
 .hobby-tag {
-	margin-top: 0;
-	color: #facc15;
-	font-size: 0.75rem;
+  margin-top: 0;
+  color: #facc15;
+  font-size: 0.75rem;
 }
 
 /* Contact */

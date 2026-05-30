@@ -6,7 +6,8 @@
       "year": "2026",
       "url": "https://example.com",
       "command": "cat ./certs/pending.txt"
-    }, {
+    },
+    {
       "name": "Certificación pendiente",
       "issuer": "Proveedor",
       "year": "2026",

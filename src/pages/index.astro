@@ -6,7 +6,7 @@ import experienceData from "../data/experience.json";
 import profileData from "../data/profile.json";
 import hobbiesData from "../data/hobbies.json";
 import certificationsData from "../data/certifications.json";
-import.meta.env.BASE_URL
+import.meta.env.BASE_URL;
 
 const projects = projectsData.projects;
 const skills = skillsData.skills;
@@ -14,7 +14,8 @@ const experiences = experienceData.experience;
 const profile = profileData;
 const hobbies = hobbiesData.hobbies;
 const certifications = certificationsData.certifications;
-const withBase = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^\/+/, "")}`;
+const withBase = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 ---
 
 <html lang="es">
@@ -62,7 +63,11 @@ const withBase = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^
 
             <div class="hero-actions">
               <a class="button-primary" href="#projects">Ver mi trabajo →</a>
-              <a class="button-secondary" href={withBase(profile.cvUrl)} download>
+              <a
+                class="button-secondary"
+                href={withBase(profile.cvUrl)}
+                download
+              >
                 Descargar CV ↓
               </a>
             </div>
@@ -88,7 +93,6 @@ const withBase = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^
           </aside>
         </div>
       </section>
-
 
       <section id="skills">
         <div class="section-title-row">
@@ -123,9 +127,7 @@ const withBase = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^
         </div>
       </section>
 
-
-
-	  <section id="projects">
+      <section id="projects">
         <div class="section-title-row">
           <p class="eyebrow">&gt; 03. portfolio</p>
           <p class="section-count">{projects.length} projects</p>
@@ -137,9 +139,9 @@ const withBase = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^
             projects.map((project) => (
               <article class="project-card">
                 <div class="project-window-bar">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                  <span />
+                  <span />
+                  <span />
 
                   <p>project.preview</p>
                 </div>
@@ -308,7 +310,6 @@ const withBase = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^
           }
         </div>
       </section>
-
 
       <section id="contact">
         <div class="section-title-row">

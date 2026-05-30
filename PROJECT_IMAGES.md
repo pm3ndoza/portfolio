@@ -71,8 +71,6 @@ Por ahora todas las cards usan:
 
 La imagen debe ocupar todo el lienzo. Evita generar una captura pequena flotando sobre un fondo oscuro, porque en la card se ve como un cuadro dentro de otro cuadro.
 
-
-
 16:9 project thumbnail, zoomed-in crop of a dark dashboard UI.
 The interface should fill the whole image edge-to-edge.
 No outer browser frame, no terminal window border, no large padding.
