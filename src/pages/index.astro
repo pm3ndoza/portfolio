@@ -50,167 +50,179 @@ const withBase = (path: string) => {
       </nav>
     </header>
     <main>
-      <section id="home">
-        <p class="eyebrow">&gt; 01. home</p>
-        <p>&gt; cat whoami.txt</p>
+      <section id="home" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; 01. home</p>
+        </div>
+        <p class="terminal-section-command">&gt; cat whoami.txt</p>
+        <div class="terminal-section-body">
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <h1>{profile.name}</h1>
+              <p class="role">{profile.role}</p>
+              <p>{profile.hero}</p>
 
-        <div class="hero-layout">
-          <div class="hero-copy">
-            <h1>{profile.name}</h1>
-            <p class="role">{profile.role}</p>
-            <p>{profile.hero}</p>
+              <div class="hero-meta">
+                <span>{profile.contact.location}</span>
+                <span>{profile.availability}</span>
+              </div>
 
-            <div class="hero-meta">
-              <span>{profile.contact.location}</span>
-              <span>{profile.availability}</span>
+              <div class="hero-actions">
+                <a class="button-primary" href="#projects">Ver mi trabajo →</a>
+                <a
+                  class="button-secondary"
+                  href={withBase(profile.cvUrl)}
+                  download
+                >
+                  Descargar CV ↓
+                </a>
+              </div>
             </div>
 
-            <div class="hero-actions">
-              <a class="button-primary" href="#projects">Ver mi trabajo →</a>
-              <a
-                class="button-secondary"
-                href={withBase(profile.cvUrl)}
-                download
-              >
-                Descargar CV ↓
-              </a>
-            </div>
+            <aside class="hero-terminal">
+              <div class="terminal-window-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>~/sys/about.me</p>
+              </div>
+
+              <div class="terminal-info">
+                <p><strong>OS:</strong> Ubuntu</p>
+                <p><strong>Shell:</strong> zsh</p>
+                <p><strong>Editor:</strong> vim</p>
+                <p><strong>User:</strong> pmendoza@githubpages</p>
+                <p><strong>Role:</strong> {profile.role}</p>
+                <p><strong>Location:</strong> {profile.contact.location}</p>
+                <p><strong>Status:</strong> {profile.availability}</p>
+              </div>
+            </aside>
           </div>
-
-          <aside class="hero-terminal">
-            <div class="terminal-window-bar">
-              <span></span>
-              <span></span>
-              <span></span>
-              <p>~/sys/about.me</p>
-            </div>
-
-            <div class="terminal-info">
-              <p><strong>OS:</strong> Ubuntu</p>
-              <p><strong>Shell:</strong> zsh</p>
-              <p><strong>Editor:</strong> vim</p>
-              <p><strong>User:</strong> pmendoza@githubpages</p>
-              <p><strong>Role:</strong> {profile.role}</p>
-              <p><strong>Location:</strong> {profile.contact.location}</p>
-              <p><strong>Status:</strong> {profile.availability}</p>
-            </div>
-          </aside>
         </div>
       </section>
 
-      <section id="skills">
-        <div class="section-title-row">
+      <section id="skills" class="terminal-section">
+        <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 02. skills</p>
           <p class="section-status">
             &gt; {skills.length} skill groups cargados... aprendizaje continuo
           </p>
         </div>
-        <p>&gt; ls skills/</p>
-        <div class="cards-grid skills-grid">
-          {
-            skills.map((skill) => (
-              <article>
-                <div class="skill-heading">
-                  <img
-                    class="skill-icon"
-                    src={withBase(skill.icon)}
-                    alt=""
-                    loading="lazy"
-                  />
-                  <h2>{skill.title}</h2>
-                </div>
-                <ul>
-                  {skill.items.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-                <p class="card-command">&gt; {skill.command}</p>
-              </article>
-            ))
-          }
+        <p class="terminal-section-command">&gt; ls skills/</p>
+        <div class="terminal-section-body">
+          <div class="cards-grid skills-grid">
+            {
+              skills.map((skill) => (
+                <article>
+                  <div class="skill-heading">
+                    <img
+                      class="skill-icon"
+                      src={withBase(skill.icon)}
+                      alt=""
+                      loading="lazy"
+                    />
+                    <h2>{skill.title}</h2>
+                  </div>
+                  <ul>
+                    {skill.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                  <p class="card-command">&gt; {skill.command}</p>
+                </article>
+              ))
+            }
+          </div>
         </div>
       </section>
 
-      <section id="projects">
-        <div class="section-title-row">
+      <section id="projects" class="terminal-section">
+        <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 03. portfolio</p>
           <p class="section-count">{projects.length} projects</p>
         </div>
 
-        <p>&gt; ls projects/</p>
-        <div class="cards-grid projects-grid">
-          {
-            projects.map((project) => (
-              <article class="project-card">
-                <div class="project-window-bar">
-                  <span />
-                  <span />
-                  <span />
+        <p class="terminal-section-command">&gt; ls projects/</p>
+        <div class="terminal-section-body">
+          <div class="cards-grid projects-grid">
+            {
+              projects.map((project) => (
+                <article class="project-card">
+                  <div class="project-window-bar">
+                    <span />
+                    <span />
+                    <span />
 
-                  <p>project.preview</p>
-                </div>
-
-                <div class="project-content">
-                  <h2>{project.title}</h2>
-                  <p>{project.description}</p>
-
-                  <div class="project-tags">
-                    {project.tags.map((tag) => (
-                      <span>{tag}</span>
-                    ))}
+                    <div class="project-window-tags">
+                      {project.tags.map((tag) => (
+                        <span>{tag}</span>
+                      ))}
+                    </div>
                   </div>
 
-                  <img
-                    class="project-preview"
-                    src={withBase(project.image)}
-                    alt={`Preview de ${project.title}`}
-                    loading="lazy"
-                  />
+                  <div class="project-content">
+                    <h2>{project.title}</h2>
+                    <p>{project.description}</p>
 
-                  <a
-                    class="card-command"
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    &gt; {project.command}
-                  </a>
-                </div>
-              </article>
-            ))
-          }
+                    <img
+                      class="project-preview"
+                      src={withBase(project.image)}
+                      alt={`Preview de ${project.title}`}
+                      loading="lazy"
+                    />
+
+                    <a
+                      class="card-command"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      &gt; {project.command}
+                    </a>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
         </div>
       </section>
-      <section id="experience">
-        <div class="section-title-row">
+      <section id="experience" class="terminal-section">
+        <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 04. Experiencia Laboral</p>
           <p class="section-count">{experiences.length} jobs</p>
         </div>
-        <div class="section-header">
-          <p>&gt; cat experience.log</p>
-        </div>
+        <p class="terminal-section-command">&gt; cat experience.log</p>
 
         <div class="experience-log">
           {
             experiences.map((experience) => (
               <article class="log-item">
-                <div class="log-dot" />
-                <p class="period">{experience.period}</p>
-                <div class="log-role">
-                  <h2>{experience.role}</h2>
-                  <p class="company">{experience.company}</p>
-                </div>
-                <p>{experience.description}</p>
-                <div class="tags">
-                  {experience.tags.map((item) => (
-                    <span>{item}</span>
-                  ))}
-                </div>
+                <div class="log-dot" aria-hidden="true" />
                 <details class="experience-detail">
-                  <summary>ver highlights</summary>
+                  <summary class="experience-summary">
+                    <span class="period">{experience.period}</span>
+
+                    <span class="log-role">
+                      <span class="role-title">{experience.role}</span>
+                      <span class="company">{experience.company}</span>
+                    </span>
+
+                    <span class="experience-description">
+                      {experience.description}
+                    </span>
+
+                    <span class="tags">
+                      {experience.tags.map((item) => (
+                        <span>{item}</span>
+                      ))}
+                    </span>
+                  </summary>
+
                   <ul class="highlights-list">
                     {experience.highlights.map((item) => (
-                      <li>{item}</li>
+                      <li>
+                        <span>{item}</span>
+                      </li>
                     ))}
                   </ul>
                 </details>
@@ -220,45 +232,48 @@ const withBase = (path: string) => {
         </div>
       </section>
 
-      <section id="certifications">
-        <div class="section-title-row">
+      <section id="certifications" class="terminal-section">
+        <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 05. certificaciones</p>
           <p class="section-count">{certifications.length} certs</p>
         </div>
 
-        <p>&gt; ls certificates/</p>
+        <p class="terminal-section-command">&gt; ls certificates/</p>
 
-        <div class="cards-grid certs-grid">
-          {
-            certifications.map((certification) => (
-              <article class="cert-card">
-                <p class="cert-issuer">{certification.issuer}</p>
-                <h2>{certification.name}</h2>
-                <p>{certification.year}</p>
-                <a
-                  class="card-command"
-                  href={certification.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  &gt; {certification.command}
-                </a>
-              </article>
-            ))
-          }
+        <div class="terminal-section-body">
+          <div class="cards-grid certs-grid">
+            {
+              certifications.map((certification) => (
+                <article class="cert-card">
+                  <p class="cert-issuer">{certification.issuer}</p>
+                  <h2>{certification.name}</h2>
+                  <p>{certification.year}</p>
+                  <a
+                    class="card-command"
+                    href={certification.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    &gt; {certification.command}
+                  </a>
+                </article>
+              ))
+            }
+          </div>
         </div>
       </section>
 
-      <section id="about">
-        <div class="section-title-row">
+      <section id="about" class="terminal-section">
+        <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 06. about me</p>
         </div>
 
-        <p>&gt; cat about.me</p>
+        <p class="terminal-section-command">&gt; cat about.me</p>
 
-        <div class="about-layout">
-          <pre
-            class="ascii-art">
+        <div class="terminal-section-body">
+          <div class="about-layout">
+            <pre
+              class="ascii-art">
 -------===========-:::-=============--------
 -------=========-:::::::-============--------
 -----==========-::::::::::==============-----
@@ -286,68 +301,73 @@ const withBase = (path: string) => {
 ::::::--:::-:::::--=---:::-=--::-::::::::::::
 		</pre>
 
-          <div>
-            {profile.about.map((item) => <p>{item}</p>)}
+            <div>
+              {profile.about.map((item) => <p>{item}</p>)}
 
-            <p class="card-command">&gt; echo "{profile.summary}"</p>
+              <p class="card-command">&gt; echo "{profile.summary}"</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="hobbies" class="crew-section">
-        <div class="section-title-row">
+      <section id="hobbies" class="terminal-section crew-section">
+        <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 07. gustos / preferencias</p>
           <p class="section-count">crew log</p>
         </div>
 
-        <p>&gt; cat crew.log</p>
+        <p class="terminal-section-command">&gt; cat crew.log</p>
 
-        <div class="cards-grid hobbies-grid">
-          {
-            hobbies.map((hobby) => (
-              <article class="hobby-card">
-                <p class="hobby-tag">{hobby.tag}</p>
-                <h2>{hobby.title}</h2>
-                <p>{hobby.description}</p>
-              </article>
-            ))
-          }
+        <div class="terminal-section-body">
+          <div class="cards-grid hobbies-grid">
+            {
+              hobbies.map((hobby) => (
+                <article class="hobby-card">
+                  <p class="hobby-tag">{hobby.tag}</p>
+                  <h2>{hobby.title}</h2>
+                  <p>{hobby.description}</p>
+                </article>
+              ))
+            }
+          </div>
         </div>
       </section>
 
-      <section id="contact">
-        <div class="section-title-row">
+      <section id="contact" class="terminal-section">
+        <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 08. contact</p>
           <p class="section-count">let's connect</p>
         </div>
-        <p>&gt; ./contact.sh</p>
+        <p class="terminal-section-command">&gt; ./contact.sh</p>
 
-        <div class="contact-layout">
-          <div class="contact-card">
-            <p>Email: {profile.contact.email}</p>
-            <p>GitHub: {profile.contact.github}</p>
-            <p>LinkedIn: {profile.contact.linkedin}</p>
-            <p>Ubicación: {profile.contact.location}</p>
+        <div class="terminal-section-body">
+          <div class="contact-layout">
+            <div class="contact-card">
+              <p>Email: {profile.contact.email}</p>
+              <p>GitHub: {profile.contact.github}</p>
+              <p>LinkedIn: {profile.contact.linkedin}</p>
+              <p>Ubicación: {profile.contact.location}</p>
+            </div>
+
+            <form class="contact-form">
+              <label>
+                nombre:
+                <input type="text" />
+              </label>
+
+              <label>
+                email:
+                <input type="email" />
+              </label>
+
+              <label>
+                mensaje:
+                <textarea></textarea>
+              </label>
+
+              <button type="button">enviar mensaje &gt;</button>
+            </form>
           </div>
-
-          <form class="contact-form">
-            <label>
-              nombre:
-              <input type="text" />
-            </label>
-
-            <label>
-              email:
-              <input type="email" />
-            </label>
-
-            <label>
-              mensaje:
-              <textarea></textarea>
-            </label>
-
-            <button type="button">enviar mensaje &gt;</button>
-          </form>
         </div>
       </section>
     </main>
