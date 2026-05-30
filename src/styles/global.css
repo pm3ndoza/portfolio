@@ -107,37 +107,39 @@ section + section {
   margin-top: 1rem;
 }
 
-.section-title-row {
+.terminal-section {
+  padding: 0;
+  overflow: hidden;
+  background: rgba(3, 16, 20, 0.5);
+  box-shadow:
+    0 0 32px rgba(0, 255, 136, 0.08),
+    inset 0 0 28px rgba(3, 16, 20, 0.45);
+}
+
+.terminal-section-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.55rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid rgba(22, 77, 85, 0.55);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(22, 77, 85, 0.62);
+  background: rgba(6, 27, 33, 0.68);
 }
 
-.section-title-row p {
+.terminal-section-bar p {
   margin: 0;
   line-height: 1.2;
 }
 
-.section-title-row + p {
-  margin-top: 0.25rem;
-  margin-bottom: 1.25rem;
+.terminal-section-command {
+  margin: 0;
+  padding: 1rem 1.5rem 0;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 1rem;
-}
-
-.section-header p {
-  margin-top: 0;
+.terminal-section-body {
+  padding: 1.2rem 1.5rem 1.55rem;
 }
 
 .section-count {
@@ -153,6 +155,7 @@ section + section {
   line-height: 1.2;
   opacity: 0.85;
 }
+
 .eyebrow {
   color: var(--section-accent, var(--accent));
   font-weight: 700;
@@ -340,7 +343,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .card-command {
@@ -450,7 +453,6 @@ article h2 {
   padding: 1.25rem;
 }
 
-
 .project-window-tags {
   margin-left: auto;
   display: flex;
@@ -470,45 +472,7 @@ article h2 {
   white-space: nowrap;
 }
 
-
 /* Experience */
-#experience {
-  padding: 0;
-  background: rgba(3, 16, 20, 0.5);
-  overflow: hidden;
-  box-shadow: inset 0 0 28px rgba(3, 16, 20, 0.45);
-}
-
-.experience-window-bar {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid rgba(22, 77, 85, 0.62);
-  background: rgba(6, 27, 33, 0.68);
-}
-
-.experience-window-bar p {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.experience-window-bar span {
-  color: var(--section-accent, var(--accent));
-}
-
-.experience-window-bar .eyebrow {
-  color: var(--section-accent, var(--accent));
-}
-
-.experience-command {
-  margin: 0;
-  padding: 1rem 1.5rem 0;
-  color: var(--muted);
-}
-
 .experience-log {
   position: relative;
   display: grid;
@@ -599,7 +563,7 @@ article h2 {
 .experience-detail {
   border: 1px solid rgba(90, 169, 255, 0.18);
   border-radius: 6px;
-  background: rgba(2, 12, 17, 0.74);
+  background: rgba(8, 36, 43, 0.62);
   overflow: hidden;
   transition:
     border-color 180ms ease,
@@ -610,7 +574,7 @@ article h2 {
 .experience-detail:hover,
 .experience-detail[open] {
   border-color: color-mix(in srgb, var(--section-accent) 45%, var(--border));
-  background: rgba(4, 18, 24, 0.86);
+  background: rgba(10, 44, 52, 0.78);
   box-shadow: 0 0 24px rgba(90, 169, 255, 0.08);
 }
 
@@ -625,10 +589,9 @@ article h2 {
 
 .experience-summary {
   display: grid;
-  grid-template-columns: 150px minmax(190px, 0.85fr) minmax(260px, 1.35fr) minmax(
-      220px,
-      0.95fr
-    );
+  grid-template-columns:
+    150px minmax(190px, 0.85fr) minmax(260px, 1.35fr)
+    minmax(220px, 0.95fr);
   gap: 1.25rem;
   align-items: center;
   padding: 1rem 1.2rem;
@@ -699,7 +662,7 @@ article h2 {
 
 /* About */
 .about-layout {
-  margin-top: 1.5rem;
+  margin-top: 0;
   display: grid;
   grid-template-columns: minmax(0, 360px) 1fr;
   gap: 2rem;
@@ -752,7 +715,7 @@ article h2 {
 
 /* Contact */
 .contact-layout {
-  margin-top: 1.5rem;
+  margin-top: 0;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 1rem;
@@ -855,7 +818,7 @@ article h2 {
     font-size: 2.8rem;
   }
 
-  .section-title-row {
+  .terminal-section-bar {
     flex-direction: column;
     align-items: flex-start;
   }
