@@ -1,0 +1,16 @@
+{
+  "name": "Pedro Mendoza",
+  "role": "SRE / DevOps Engineer | Cloud | Automatización",
+  "hero": "Construyo infraestructura confiable, pipelines eficientes y sistemas pensados para operar bien en producción.",
+  "availability": "Disponible para oportunidades",
+  "cvUrl": "/cv.pdf",
+  "summary": "siempre construyendo, siempre aprendiendo",
+  "about": ["Soy un profesional orientado...", "Me gusta aprender haciendo..."],
+  "contact": {
+    "email": "pmendozauy@gmail.com",
+    "github": "https://github.com/pm3ndoza",
+    "linkedin": "https://www.linkedin.com/in/pm3ndoza/",
+    "location": "Uruguay",
+    "city": "Montevideo"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hobbies": [
+    {
+      "title": "Anime & Manga",
+      "description": "Historias de aventura, tripulación y mundos enormes.",
+      "tag": "crew/log"
+    },
+    {
+      "title": "Mapas & Estrategia",
+      "description": "Explorar rutas, planificar decisiones y entender sistemas.",
+      "tag": "log/pose"
+    },
+    {
+      "title": "Tecnología",
+      "description": "Probar herramientas, automatizar procesos y aprender sin parar.",
+      "tag": "workshop"
+    }
+  ]
+}

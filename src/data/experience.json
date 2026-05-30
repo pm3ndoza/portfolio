@@ -1,0 +1,64 @@
+{
+  "experience": [
+    {
+      "period": "2024 - Presente",
+      "role": "SRE / DevOps Engineer",
+      "company": "Pormel",
+      "description": "Automatización de infraestructura, observabilidad y operación de servicios productivos en entornos cloud.",
+      "tags": ["AWS", "Kubernetes", "Terraform", "Grafana"],
+      "highlights": [
+        "Automatización de despliegues y procesos repetitivos.",
+        "Mejoras en monitoreo, alertas y respuesta operativa.",
+        "Soporte a equipos de desarrollo en entornos cloud."
+      ]
+    },
+    {
+      "period": "2022 - 2024",
+      "role": "Cloud Engineer",
+      "company": "Tech Solutions",
+      "description": "Diseño e implementación de plataformas cloud escalables para aplicaciones empresariales.",
+      "tags": ["AWS", "Docker", "EKS", "CI/CD"],
+      "highlights": [
+        "Migración de aplicaciones on-premise a AWS.",
+        "Implementación de pipelines CI/CD con GitHub Actions.",
+        "Reducción de tiempos de despliegue en un 70%."
+      ]
+    },
+    {
+      "period": "2021 - 2022",
+      "role": "DevOps Engineer",
+      "company": "Innovatech",
+      "description": "Desarrollo de herramientas internas para automatizar procesos operativos y mejorar la confiabilidad de los servicios.",
+      "tags": ["Python", "Terraform", "Jenkins", "Linux"],
+      "highlights": [
+        "Creación de scripts para automatización de tareas administrativas.",
+        "Gestión de infraestructura como código con Terraform.",
+        "Optimización de pipelines de integración continua."
+      ]
+    },
+    {
+      "period": "2020 - 2021",
+      "role": "Systems Administrator",
+      "company": "Digital Services",
+      "description": "Administración de servidores Linux y soporte a plataformas de producción.",
+      "tags": ["Linux", "Bash", "Nginx", "Monitoring"],
+      "highlights": [
+        "Administración de más de 100 servidores Linux.",
+        "Implementación de monitoreo centralizado.",
+        "Mejora de la disponibilidad de servicios críticos."
+      ]
+    },
+    {
+      "period": "2020 - 2021",
+      "role": "Systems Administrator",
+      "company": "Digital Services",
+      "description": "Administración de servidores Linux y soporte a plataformas de producción.",
+      "tags": ["Linux", "Bash", "Nginx", "Monitoring"],
+      "highlights": [
+        "Administración de más de 100 servidores Linux.",
+        "Implementación de monitoreo centralizado.",
+        "Mejora de la disponibilidad de servicios críticos."
+      ]
+    }
+  ]
+}
