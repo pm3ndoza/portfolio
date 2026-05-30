@@ -182,35 +182,42 @@ const withBase = (path: string) => {
         </div>
       </section>
       <section id="experience">
-        <div class="section-title-row">
+        <div class="experience-window-bar">
           <p class="eyebrow">&gt; 04. Experiencia Laboral</p>
           <p class="section-count">{experiences.length} jobs</p>
         </div>
-        <div class="section-header">
-          <p>&gt; cat experience.log</p>
-        </div>
+        <p class="experience-command">&gt; cat experience.log</p>
 
         <div class="experience-log">
           {
             experiences.map((experience) => (
               <article class="log-item">
-                <div class="log-dot" />
-                <p class="period">{experience.period}</p>
-                <div class="log-role">
-                  <h2>{experience.role}</h2>
-                  <p class="company">{experience.company}</p>
-                </div>
-                <p>{experience.description}</p>
-                <div class="tags">
-                  {experience.tags.map((item) => (
-                    <span>{item}</span>
-                  ))}
-                </div>
+                <div class="log-dot" aria-hidden="true" />
                 <details class="experience-detail">
-                  <summary>ver highlights</summary>
+                  <summary class="experience-summary">
+                    <span class="period">{experience.period}</span>
+
+                    <span class="log-role">
+                      <span class="role-title">{experience.role}</span>
+                      <span class="company">{experience.company}</span>
+                    </span>
+
+                    <span class="experience-description">
+                      {experience.description}
+                    </span>
+
+                    <span class="tags">
+                      {experience.tags.map((item) => (
+                        <span>{item}</span>
+                      ))}
+                    </span>
+                  </summary>
+
                   <ul class="highlights-list">
                     {experience.highlights.map((item) => (
-                      <li>{item}</li>
+                      <li>
+                        <span>{item}</span>
+                      </li>
                     ))}
                   </ul>
                 </details>
