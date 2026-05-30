@@ -51,9 +51,10 @@ const withBase = (path: string) => {
     </header>
     <main>
       <section id="home">
-        <p class="eyebrow">&gt; 01. home</p>
+        <div class="section-title-row">
+          <p class="eyebrow">&gt; 01. home</p>
+        </div>
         <p>&gt; cat whoami.txt</p>
-
         <div class="hero-layout">
           <div class="hero-copy">
             <h1>{profile.name}</h1>
@@ -147,18 +148,17 @@ const withBase = (path: string) => {
                   <span />
                   <span />
 
-                  <p>project.preview</p>
+                  <div class="project-window-tags">
+                    {project.tags.map((tag) => (
+                      <span>{tag}</span>
+                    ))}
+                  </div>
                 </div>
 
                 <div class="project-content">
                   <h2>{project.title}</h2>
                   <p>{project.description}</p>
 
-                  <div class="project-tags">
-                    {project.tags.map((tag) => (
-                      <span>{tag}</span>
-                    ))}
-                  </div>
 
                   <img
                     class="project-preview"
