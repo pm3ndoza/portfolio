@@ -1,0 +1,10 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="140" height="140" rx="18" fill="#07171c" stroke="#22f5c8" stroke-width="3"/>
+  <rect x="22" y="22" width="116" height="116" rx="14" fill="#10242b" stroke="#2c5360"/>
+  <path d="M80 40c12 0 22 10 22 22S92 84 80 84 58 74 58 62s10-22 22-22Z" stroke="#22f5c8" stroke-width="5"/>
+  <path d="M46 104c7-12 20-20 34-20s27 8 34 20" stroke="#22f5c8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M48 62h-9m82 0h-9M80 30v-9M80 103v-9" stroke="#5aa9ff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M48 62c0-18 14-32 32-32m32 32c0 18-14 32-32 32" stroke="#5aa9ff" stroke-width="4" stroke-linecap="round"/>
+  <text x="80" y="123" text-anchor="middle" fill="#f7f7f7" font-family="Courier New, monospace" font-size="19" font-weight="700">SCRUM</text>
+  <text x="80" y="139" text-anchor="middle" fill="#22f5c8" font-family="Courier New, monospace" font-size="12" font-weight="700">MASTER</text>
+</svg>

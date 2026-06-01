@@ -4,12 +4,33 @@
   "hero": "Construyo infraestructura confiable, pipelines eficientes y sistemas pensados para operar bien en producción.",
   "availability": "Disponible para oportunidades",
   "cvUrl": "/cv.pdf",
+  "photo": "",
   "summary": "siempre construyendo, siempre aprendiendo",
-  "about": ["Soy un profesional orientado...", "Me gusta aprender haciendo..."],
+  "aboutIntro": "Soy Pedro Mendoza.",
+  "about": [
+    "Trabajo en infraestructura, automatización y operación de servicios productivos con foco en confiabilidad, claridad y mejora continua.",
+    "Me gusta convertir procesos repetitivos en herramientas simples, observar los sistemas con criterio y construir bases técnicas que ayuden a otros equipos a moverse mejor."
+  ],
+  "profileConfig": {
+    "mode": "building reliable systems",
+    "focus": "cloud, observability, automation",
+    "location": "Uruguay",
+    "prefers": [
+      "infraestructura simple",
+      "automatización útil",
+      "observabilidad accionable",
+      "operación tranquila"
+    ]
+  },
+  "values": ["reliability", "clarity", "ownership", "learning"],
   "contact": {
     "email": "pmendozauy@gmail.com",
     "github": "https://github.com/pm3ndoza",
     "linkedin": "https://www.linkedin.com/in/pm3ndoza/",
+    "instagram": "https://www.instagram.com/",
+    "localTime": "America/Montevideo",
+    "responseTime": "24-48h",
+    "status": "accepting conversations",
     "location": "Uruguay",
     "city": "Montevideo"
   }

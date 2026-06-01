@@ -1,19 +1,49 @@
 {
+  "intro": "Fuera del teclado tambien construyo, entreno, viajo, cocino, arreglo cosas y colecciono historias. Esta parte es menos CV y mas bitacora.",
+  "signal": "no todo lo que forma a una persona entra en una job description",
+  "stamps": ["Uruguay", "Argentina", "Chile", "Colombia", "Venezuela", "motos", "taller", "anime"],
   "hobbies": [
     {
-      "title": "Anime & Manga",
-      "description": "Historias de aventura, tripulación y mundos enormes.",
-      "tag": "crew/log"
+      "title": "Movimiento",
+      "tag": "route/training",
+      "description": "Ciclismo, jogging, boxeo, salsa casino y rutas en moto: energia, ritmo, disciplina y cabeza despejada.",
+      "items": ["ciclismo", "jogging", "boxeo", "salsa casino", "motos"]
     },
     {
-      "title": "Mapas & Estrategia",
-      "description": "Explorar rutas, planificar decisiones y entender sistemas.",
-      "tag": "log/pose"
+      "title": "Viajes & Rutas",
+      "tag": "map/passport",
+      "description": "Me gusta viajar, conocer paises y hacer ruta. Por ahora el mapa ya paso por Uruguay, Argentina, Chile, Colombia y Venezuela.",
+      "items": ["Uruguay", "Argentina", "Chile", "Colombia", "Venezuela", "ruta en moto"]
     },
     {
-      "title": "Tecnología",
-      "description": "Probar herramientas, automatizar procesos y aprender sin parar.",
-      "tag": "workshop"
+      "title": "Oficios & Manos",
+      "tag": "workshop/craft",
+      "description": "Me gusta aprender haciendo: cocina, carpinteria, soldadura y trabajos donde el resultado se toca.",
+      "items": ["pasteleria", "carpinteria", "soldadura", "metalurgia"]
+    },
+    {
+      "title": "Rutas Vividas",
+      "tag": "street/log",
+      "description": "Fui taxista, Uber, mesero, trabaje en construccion y metalurgias. Mucha calle, mucho oficio, mucha adaptacion.",
+      "items": ["taxi", "Uber", "mesero", "construccion"]
+    },
+    {
+      "title": "Historias",
+      "tag": "anime/manga",
+      "description": "Me gustan las historias de tripulaciones, lealtad, sacrificio y personajes que avanzan aunque el mapa no este completo.",
+      "items": ["One Piece", "Zoro", "Ace", "Barbablanca", "Fullmetal Alchemist"]
+    },
+    {
+      "title": "Compania2",
+      "tag": "home/base2",
+      "description": "Tambien estan los gustos simples: perros, casa, detalles cotidianos y cosas que mantienen los pies en la tierra.",
+      "items": ["perros", "vida diaria", "familia", "calma"]
+    },
+    {
+      "title": "Compania3",
+      "tag": "home/base3",
+      "description": "Tambien estan los gustos simples: perros, casa, detalles cotidianos y cosas que mantienen los pies en la tierra.",
+      "items": ["perros", "vida diaria", "familia", "calma"]
     }
   ]
 }

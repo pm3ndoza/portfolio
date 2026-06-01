@@ -13,7 +13,31 @@ const skills = skillsData.skills;
 const experiences = experienceData.experience;
 const profile = profileData;
 const hobbies = hobbiesData.hobbies;
+const shuffleHobbies = <T,>(items: T[]) => {
+  const midpoint = Math.ceil(items.length / 2);
+  const left = items.slice(0, midpoint);
+  const right = items.slice(midpoint);
+
+  return left.flatMap((item, index) => {
+    const pair = right[right.length - 1 - index];
+    return pair ? [item, pair] : [item];
+  });
+};
+const shuffledHobbies = shuffleHobbies(
+  hobbies.map((hobby, index) => ({ ...hobby, originalIndex: index }))
+);
+const hobbiesIntro = hobbiesData.intro;
+const hobbiesSignal = hobbiesData.signal;
+const hobbiesStamps = hobbiesData.stamps;
 const certifications = certificationsData.certifications;
+const getInitials = (value: string) =>
+  value
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
 const withBase = (path: string) => {
   const base = import.meta.env.BASE_URL.endsWith("/")
     ? import.meta.env.BASE_URL
@@ -34,12 +58,12 @@ const withBase = (path: string) => {
   <body>
     <header class="topbar">
       <div class="terminal-path">
-        <span>pmendoza@githubpages</span>
-        <span>~/portfolio</span>
-        <span>main</span>
+        <span class="path-user"><b>user@devbox</b></span>
+        <span class="path-dir"><b>~/portfolio</b></span>
+        <span class="path-branch"><b>main</b></span>
       </div>
-      <nav>
-        <a href="#home">01. home</a>
+      <nav class="desktop-nav">
+        <a class="active" href="#home">01. home</a>
         <a href="#skills">02. skills</a>
         <a href="#projects">03. portfolio</a>
         <a href="#experience">04. experience</a>
@@ -48,6 +72,19 @@ const withBase = (path: string) => {
         <a href="#hobbies">07. gustos</a>
         <a href="#contact">08. contact</a>
       </nav>
+      <details class="nav-menu mobile-nav">
+        <summary>&gt; menu</summary>
+        <nav>
+          <a class="active" href="#home">01. home</a>
+          <a href="#skills">02. skills</a>
+          <a href="#projects">03. portfolio</a>
+          <a href="#experience">04. experience</a>
+          <a href="#certifications">05. certs</a>
+          <a href="#about">06. about</a>
+          <a href="#hobbies">07. gustos</a>
+          <a href="#contact">08. contact</a>
+        </nav>
+      </details>
     </header>
     <main>
       <section id="home" class="terminal-section">
@@ -245,17 +282,51 @@ const withBase = (path: string) => {
             {
               certifications.map((certification) => (
                 <article class="cert-card">
-                  <p class="cert-issuer">{certification.issuer}</p>
-                  <h2>{certification.name}</h2>
-                  <p>{certification.year}</p>
-                  <a
-                    class="card-command"
-                    href={certification.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    &gt; {certification.command}
-                  </a>
+                  <div class="cert-card-top">
+                    <div class="cert-badge" aria-hidden="true">
+                      {certification.badge ? (
+                        <img
+                          src={withBase(certification.badge)}
+                          alt=""
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span>{getInitials(certification.issuer)}</span>
+                      )}
+                    </div>
+
+                    <span class="cert-status">verified</span>
+                  </div>
+
+                  <div class="cert-content">
+                    <p class="cert-issuer">{certification.issuer}</p>
+                    <h2>{certification.name}</h2>
+                    <p class="cert-year">issued: {certification.year}</p>
+                  </div>
+
+                  <details class="cert-detail">
+                    <summary class="card-command">
+                      &gt; {certification.command} →
+                    </summary>
+
+                    <ul class="cert-verify-list">
+                      <li>
+                        <span>issuer: {certification.issuer}</span>
+                      </li>
+                      <li>
+                        <span>code: {certification.verificationCode}</span>
+                      </li>
+                      <li>
+                        <a
+                          href={certification.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          verify_url
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
                 </article>
               ))
             }
@@ -272,37 +343,38 @@ const withBase = (path: string) => {
 
         <div class="terminal-section-body">
           <div class="about-layout">
-            <pre
-              class="ascii-art">
--------===========-:::-=============--------
--------=========-:::::::-============--------
------==========-::::::::::==============-----
----============--=-==-:::::=+++===========---
---=========++++===::::::::::::=+++==========-
-=========+++=-:::::::::::::::::-++++=========
-=======+++=-:::::::::::::::::::::=++++=======
-======++=::::::::::::::::::::::::::-=++======
-=====+=-:--=========--::===-===---==--=+=====
-==--:::--===========::::::-==========-::::--=
-=:::::::-==========:-::::-:==========--:-::::
--::-::----===-=---==--::::-==--==-===--:--:::
-:::-:::-:-==-:-=====-=========--::===::::::::
-::::::::--==========:---::==========--:::::::
-::::::::=-==========-:::::==========-=:::::::
---:--==----==========--:-==========---:-=--:-
-==--===-=--===========::==========-::-=====-=
-==-:=====--==========::::========-::-======-=
-=-::-===-=--===========-=========::-=====--::
--:---====----=========---=====----:--=====:::
-:::--======-::-=====----==--:-==-::=-====--::
-:::---=----::--:--==--:::::-==-:------------:
-:::-----:-:::-====---:::--==---=-::-----:::::
-:::-------:::::-=====---==---=-::::::--::::::
-::::::--:::-:::::--=---:::-=--::-::::::::::::
-		</pre>
+            <aside class="about-profile-card">
+              <div class="about-avatar" aria-hidden="true">
+                {profile.photo ? (
+                  <img src={withBase(profile.photo)} alt="" loading="lazy" />
+                ) : (
+                  <span>{getInitials(profile.name)}</span>
+                )}
+              </div>
 
-            <div>
+              <div class="about-config">
+                <p>profile:</p>
+                <p>&nbsp;&nbsp;name: "{profile.name}"</p>
+                <p>&nbsp;&nbsp;role: "{profile.role}"</p>
+                <p>&nbsp;&nbsp;mode: "{profile.profileConfig.mode}"</p>
+                <p>&nbsp;&nbsp;focus: "{profile.profileConfig.focus}"</p>
+                <p>&nbsp;&nbsp;location: "{profile.profileConfig.location}"</p>
+                <p>&nbsp;&nbsp;prefers:</p>
+                {profile.profileConfig.prefers.map((item) => (
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;- {item}</p>
+                ))}
+              </div>
+            </aside>
+
+            <div class="about-copy">
+              <h2>{profile.aboutIntro}</h2>
               {profile.about.map((item) => <p>{item}</p>)}
+
+              <div class="about-values">
+                {profile.values.map((item) => (
+                  <span>{item}</span>
+                ))}
+              </div>
 
               <p class="card-command">&gt; echo "{profile.summary}"</p>
             </div>
@@ -316,19 +388,59 @@ const withBase = (path: string) => {
           <p class="section-count">crew log</p>
         </div>
 
-        <p class="terminal-section-command">&gt; cat crew.log</p>
+        <p class="terminal-section-command">&gt; ./open-personal-log.sh</p>
 
         <div class="terminal-section-body">
-          <div class="cards-grid hobbies-grid">
-            {
-              hobbies.map((hobby) => (
-                <article class="hobby-card">
-                  <p class="hobby-tag">{hobby.tag}</p>
-                  <h2>{hobby.title}</h2>
-                  <p>{hobby.description}</p>
-                </article>
-              ))
-            }
+          <div class="crew-log-layout">
+            <aside class="crew-map" aria-label="Mapa personal">
+              <div class="compass">
+                <span>N</span>
+                <span>E</span>
+                <span>S</span>
+                <span>W</span>
+              </div>
+              <div class="route-line" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p>{hobbiesIntro}</p>
+              <p class="crew-signal">&gt; {hobbiesSignal}</p>
+              <div class="crew-stamps" aria-label="Sellos personales">
+                {hobbiesStamps.map((stamp) => (
+                  <span>{stamp}</span>
+                ))}
+              </div>
+            </aside>
+
+            <div class="crew-manifest">
+              {
+                shuffledHobbies.map((hobby) => (
+                  <article class="hobby-card">
+                    <div class="hobby-heading">
+                      <span class="hobby-index">
+                        {String(hobby.originalIndex + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <p class="hobby-tag">{hobby.tag}</p>
+                        <h2>{hobby.title}</h2>
+                      </div>
+                    </div>
+
+                    <p>{hobby.description}</p>
+
+                    <ul class="hobby-items">
+                      {hobby.items.map((item) => (
+                        <li>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))
+              }
+            </div>
           </div>
         </div>
       </section>
@@ -336,37 +448,152 @@ const withBase = (path: string) => {
       <section id="contact" class="terminal-section">
         <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 08. contact</p>
-          <p class="section-count">let's connect</p>
+          <p class="section-count">available</p>
         </div>
-        <p class="terminal-section-command">&gt; ./contact.sh</p>
+        <p class="terminal-section-command">&gt; cat contact.sh</p>
 
         <div class="terminal-section-body">
           <div class="contact-layout">
-            <div class="contact-card">
-              <p>Email: {profile.contact.email}</p>
-              <p>GitHub: {profile.contact.github}</p>
-              <p>LinkedIn: {profile.contact.linkedin}</p>
-              <p>Ubicación: {profile.contact.location}</p>
-            </div>
+            <aside class="availability-card">
+              <h2>&gt; availability</h2>
+
+              <div class="available-now">
+                <span class="status-dot"></span>
+                <div>
+                  <strong>available for new opportunities</strong>
+                  <p>SRE / DevOps / Cloud</p>
+                </div>
+              </div>
+
+              <div class="availability-list">
+                <p>
+                  <span class="contact-icon">◷</span>
+                  <span>
+                    <strong>local time</strong>
+                    {profile.contact.localTime}
+                  </span>
+                </p>
+                <p>
+                  <span class="contact-icon">↯</span>
+                  <span>
+                    <strong>response time</strong>
+                    {profile.contact.responseTime}
+                  </span>
+                </p>
+                <p>
+                  <span class="contact-icon">◎</span>
+                  <span>
+                    <strong>mode</strong>
+                    async / remote friendly
+                  </span>
+                </p>
+              </div>
+            </aside>
+
+            <aside class="channels-card">
+              <h2>&gt; preferred_channels</h2>
+
+              <a
+                href={profile.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M6.9 9.4v8.9H4V9.4h2.9ZM5.5 5.1a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4Zm6.5 4.3.1 1.2c.6-.9 1.6-1.4 2.9-1.4 2.1 0 3.4 1.4 3.4 4.3v4.8h-2.9v-4.5c0-1.3-.5-2-1.6-2s-1.7.7-1.7 2v4.5H9.3V9.4H12Z" />
+                  </svg>
+                </span>
+                <span>
+                  <strong>LinkedIn</strong>
+                  /pm3ndoza
+                </span>
+                <em>&gt; open link</em>
+              </a>
+
+              <a
+                href={profile.contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3.5a8.7 8.7 0 0 0-2.8 17c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-.9-.9-1.1-.9-1.1-.7-.5.1-.5.1-.5.8.1 1.3.9 1.3.9.7 1.3 2 1 2.4.8.1-.5.3-.9.5-1.1-1.8-.2-3.7-.9-3.7-4 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.3.8.7-.2 1.4-.3 2.1-.3.7 0 1.4.1 2.1.3 1.6-1 2.3-.8 2.3-.8.5 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.2 0 3.1-1.9 3.8-3.7 4 .3.2.5.7.5 1.4v2.1c0 .2.2.5.6.4A8.7 8.7 0 0 0 12 3.5Z" />
+                  </svg>
+                </span>
+                <span>
+                  <strong>GitHub</strong>
+                  /pm3ndoza
+                </span>
+                <em>&gt; view repos</em>
+              </a>
+
+              <a
+                href={profile.contact.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 4.5h8A3.5 3.5 0 0 1 19.5 8v8a3.5 3.5 0 0 1-3.5 3.5H8A3.5 3.5 0 0 1 4.5 16V8A3.5 3.5 0 0 1 8 4.5Zm0 2A1.5 1.5 0 0 0 6.5 8v8A1.5 1.5 0 0 0 8 17.5h8a1.5 1.5 0 0 0 1.5-1.5V8A1.5 1.5 0 0 0 16 6.5H8Zm4 2.1a3.4 3.4 0 1 1 0 6.8 3.4 3.4 0 0 1 0-6.8Zm0 2a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8Zm4-2.4a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z" />
+                  </svg>
+                </span>
+                <span>
+                  <strong>Instagram</strong>
+                  personal log
+                </span>
+                <em>&gt; open feed</em>
+              </a>
+            </aside>
 
             <form class="contact-form">
-              <label>
-                nombre:
-                <input type="text" />
-              </label>
+              <div class="form-heading">
+                <h2>&gt; quick_message</h2>
+                <span>draft</span>
+              </div>
 
-              <label>
-                email:
-                <input type="email" />
-              </label>
+              <div class="form-fields">
+                <label>
+                  name:
+                  <input type="text" name="name" placeholder="Tu nombre" />
+                </label>
 
-              <label>
-                mensaje:
-                <textarea></textarea>
-              </label>
+                <label>
+                  email:
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="tu@email.com"
+                  />
+                </label>
 
-              <button type="button">enviar mensaje &gt;</button>
+                <label>
+                  message:
+                  <textarea
+                    name="message"
+                    placeholder="Contame en qué estás pensando..."
+                  ></textarea>
+                </label>
+              </div>
+
+              <pre class="json-preview" id="contact-json-preview">{`{
+  "route": "portfolio/contact",
+  "to": "${profile.contact.email}",
+  "from": "",
+  "reply_to": "",
+  "message": "",
+  "status": "draft",
+  "reply_expected": "${profile.contact.responseTime}"
+}`}</pre>
+
+              <button type="button">&gt; send message</button>
             </form>
+          </div>
+
+          <div class="contact-status">
+            <span>status: {profile.contact.status}</span>
+            <span>updated: live draft</span>
+            <span>channel: portfolio/contact</span>
+            <span>mode: async</span>
           </div>
         </div>
       </section>
@@ -380,5 +607,29 @@ const withBase = (path: string) => {
 
       <p>"{profile.summary}"</p>
     </footer>
+    <script>
+      const contactForm = document.querySelector(".contact-form");
+      const contactPreview = document.querySelector("#contact-json-preview");
+
+      if (contactForm instanceof HTMLFormElement && contactPreview) {
+        const updatePreview = () => {
+          const formData = new FormData(contactForm);
+          const payload = {
+            route: "portfolio/contact",
+            to: "{profile.contact.email}",
+            from: String(formData.get("name") || ""),
+            reply_to: String(formData.get("email") || ""),
+            message: String(formData.get("message") || ""),
+            status: "draft",
+            reply_expected: "{profile.contact.responseTime}",
+          };
+
+          contactPreview.textContent = JSON.stringify(payload, null, 2);
+        };
+
+        contactForm.addEventListener("input", updatePreview);
+        updatePreview();
+      }
+    </script>
   </body>
 </html>
