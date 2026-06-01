@@ -1,18 +1,22 @@
 {
   "certifications": [
     {
-      "name": "Certificación pendiente",
-      "issuer": "Proveedor",
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
       "year": "2026",
+      "badge": "assets/certifications/aws-cloud-practitioner.svg",
+      "verificationCode": "PENDING",
       "url": "https://example.com",
-      "command": "cat ./certs/pending.txt"
+      "command": "view credential"
     },
     {
-      "name": "Certificación pendiente",
-      "issuer": "Proveedor",
+      "name": "Scrum Master",
+      "issuer": "Scrum",
       "year": "2026",
+      "badge": "assets/certifications/scrum-master.svg",
+      "verificationCode": "PENDING",
       "url": "https://example.com",
-      "command": "cat ./certs/pending.txt"
+      "command": "view credential"
     }
   ]
 }

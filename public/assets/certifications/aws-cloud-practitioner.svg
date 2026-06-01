@@ -1,0 +1,9 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="140" height="140" rx="18" fill="#07171c" stroke="#ff9900" stroke-width="3"/>
+  <rect x="22" y="22" width="116" height="116" rx="14" fill="#10242b" stroke="#2c5360"/>
+  <path d="M48 84h62c9 0 16-7 16-16 0-8-6-15-14-16-4-14-17-24-32-24-17 0-31 12-34 28-9 1-16 9-16 18 0 10 8 10 18 10Z" fill="#0b1f27" stroke="#ff9900" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M57 98c15 9 32 9 47 0" stroke="#ff9900" stroke-width="4" stroke-linecap="round"/>
+  <path d="M105 98l9-2-5 8" stroke="#ff9900" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="119" text-anchor="middle" fill="#f7f7f7" font-family="Courier New, monospace" font-size="22" font-weight="700">AWS</text>
+  <text x="80" y="136" text-anchor="middle" fill="#ff9900" font-family="Courier New, monospace" font-size="9" font-weight="700">CLOUD PRACTITIONER</text>
+</svg>
