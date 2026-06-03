@@ -1,0 +1,95 @@
+{
+  "experience": [
+    {
+      "period": "March 2026 - Present",
+      "role": "SRE / DevOps Engineer",
+      "company": "Pormel",
+      "description": "Infrastructure automation, observability, and operation of production services in cloud environments.",
+      "tags": ["AWS", "Azure", "Huawei", "Terraform", "Grafana", "ArgoCD", "Kubernetes"],
+      "highlights": [
+        "Automated deployments and reduced execution times across infrastructure processes.",
+        "Implemented monitoring and observability practices for production services.",
+        "Established SRE practices to improve reliability, scalability, and operations.",
+        "Implemented alerting and incident response processes to improve resilience."
+      ]
+    },
+    {
+      "period": "April 2024 - November 2025",
+      "role": "Site Reliability Engineer",
+      "company": "UKG Ultimate Kronos Group",
+      "description": "Operation and improvement of enterprise SaaS platforms, CI/CD pipelines, observability, and hybrid production environments.",
+      "tags": ["Concourse", "GitHub Actions", "Kafka", "Datadog", "K6", "Grafana Cloud"],
+      "highlights": [
+        "Optimized CI/CD pipelines with Concourse and GitHub Actions, removing obsolete Python 2.8 build stages.",
+        "Automated self-healing processes for Concourse workers, reducing downtime and manual intervention.",
+        "Led Kafka migrations from deprecated versions to supported releases, improving stability and security.",
+        "Supported 6 production environments across hybrid bare-metal, OpenStack, and cloud infrastructure.",
+        "Contributed to observability migrations using Datadog, K6, Telegraf, and Grafana Cloud."
+      ]
+    },
+    {
+      "period": "April 2023 - April 2024",
+      "role": "Cloud Engineer",
+      "company": "F1RST / Santander Group",
+      "description": "Support and operation of banking production systems on Azure, Kubernetes, Argo CD, and Azure DevOps pipelines.",
+      "tags": ["Azure", "Azure DevOps", "Argo CD", "Kubernetes", "Terraform"],
+      "highlights": [
+        "Supported Azure-based production systems for banking platforms.",
+        "Created and optimized CI/CD pipelines in Azure DevOps.",
+        "Supported deployments through Argo CD and Kubernetes.",
+        "Used Terraform to import, organize, and manage infrastructure."
+      ]
+    },
+    {
+      "period": "February 2022 - December 2022",
+      "role": "Cloud Engineer",
+      "company": "Platzi",
+      "description": "Support for cloud platforms, Kubernetes clusters, ephemeral environments, CI/CD pipelines, and Terraform repositories.",
+      "tags": ["Kubernetes", "Docker", "containerd", "Jenkins", "GitHub Actions", "Terraform"],
+      "highlights": [
+        "Migrated CI pipelines from Jenkins to GitHub Actions, reducing execution time by approximately 10%.",
+        "Contributed to incident resolution during the Docker to containerd migration.",
+        "Supported Kubernetes clusters and ephemeral environments.",
+        "Improved Terraform repositories and observability dashboards."
+      ]
+    },
+    {
+      "period": "August 2018 - February 2022",
+      "role": "Release Engineer",
+      "company": "PwC / TCS Uruguay",
+      "description": "Support for deployments, CI/CD pipelines, and cloud infrastructure in production environments.",
+      "tags": ["Kubernetes", "Jenkins", "GCP", "CI/CD", "Deployments"],
+      "highlights": [
+        "Supported deployments on Kubernetes and CI/CD pipelines.",
+        "Managed GCP infrastructure and deployment automation.",
+        "Supported and maintained Jenkins pipelines for release processes."
+      ]
+    },
+    {
+      "period": "August 2016 - August 2018",
+      "role": "Senior DevOps Engineer / Technical Support Analyst",
+      "company": "Zippyttech Technology and Innovation",
+      "description": "First professional engineering role, combining technical support, AWS cloud administration, containers, and CI/CD practices.",
+      "tags": ["AWS", "Docker", "GitLab", "CI/CD", "Linux", "Support"],
+      "highlights": [
+        "Administered Zippyttech's cloud infrastructure on Amazon Web Services.",
+        "Contributed to continuous integration and deployment practices for internal applications.",
+        "Used Docker for application containerization and work environments.",
+        "Administered a GitLab version control server.",
+        "Provided technical support to offices and assisted with server administration."
+      ]
+    },
+    {
+      "period": "February 2013 - August 2016",
+      "role": "Technical Support / Academic Advisor",
+      "company": "Universidad Nacional Experimental del Tachira",
+      "description": "Early experience in university technical support, lab maintenance, software installation, and academic mentoring.",
+      "tags": ["Technical Support", "Linux", "Software", "Hardware", "Mentoring"],
+      "highlights": [
+        "Installed software, repaired, cloned, and maintained computers in university labs and departments.",
+        "Provided technical support at the Center for Teleinformatics Studies and the Dr. Valerio Wong Computer Lab.",
+        "Mentored students in subjects such as Discrete Mathematics, English, and Digital Logic Fundamentals."
+      ]
+    }
+  ]
+}

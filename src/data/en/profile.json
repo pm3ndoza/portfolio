@@ -1,0 +1,33 @@
+{
+  "name": "Pedro Mendoza",
+  "role": "SRE / DevOps Engineer | Cloud",
+  "hero": "DevOps Engineer and Site Reliability Engineer passionate about automation, reliability, and the scalability of modern platforms. With more than 5 years of experience designing, operating, and optimizing hybrid and cloud-native infrastructure, I help organizations accelerate delivery cycles through DevOps practices, Kubernetes, CI/CD, and Infrastructure as Code. My focus is building resilient, observable systems that are ready to grow with the needs of the business.",
+  "availability": "Available for opportunities",
+  "cvUrl": "/assets/cv/Pedro_MendozaCV.pdf",
+  "photo": "",
+  "summary": "always building, always learning",
+  "aboutIntro": "I'm Pedro Mendoza.",
+  "about": [
+    "Hi, I'm Pedro Mendoza. I was born in Venezuela, graduated as a Computer Engineer from the Universidad Nacional Experimental del Tachira, and currently live in Uruguay.",
+    "Throughout my career I have found in technology a strong mix of curiosity, continuous learning, and problem solving. I enjoy understanding how things work behind the scenes, building useful solutions, and simplifying complex processes through automation.",
+    "Beyond production environments and infrastructure, I enjoy exploring new tools, learning constantly, and sharing knowledge with other professionals. I believe the best solutions come from the combination of technical excellence, collaboration, and genuine curiosity to improve every day."
+  ],
+  "profileConfig": {
+    "mode": "Building my future",
+    "focus": "cloud, observability, automation",
+    "location": "Uruguay",
+    "prefers": ["Cloud", "observability", "Kubernetes", "Security"]
+  },
+  "values": ["reliability", "SRE", "DevOps", "learning"],
+  "contact": {
+    "email": "pmendozauy@gmail.com",
+    "github": "https://github.com/pm3ndoza",
+    "linkedin": "https://www.linkedin.com/in/pm3ndoza/",
+    "instagram": "https://www.instagram.com/pm3ndoza",
+    "localTime": "America/Montevideo",
+    "responseTime": "24-48h",
+    "status": "accepting conversations",
+    "location": "Uruguay",
+    "city": "Montevideo"
+  }
+}

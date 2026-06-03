@@ -1,0 +1,49 @@
+{
+  "intro": "Away from the keyboard I also have a life, a business, training, pets, and a collection of stories. This part is less CV and more me: the things I enjoy, the marks I carry, and the roads I have taken. Not everything that shapes a person fits inside a job description, and this is where I share a bit of what moves me.",
+  "signal": "Life is not only work.",
+  "stamps": ["Uruguay", "Brazil", "Argentina", "Chile", "Colombia", "Venezuela", "motorcycles", "cars", "Salsa Casino", "pastry", "anime", "manga", "One Piece", "cycling", "jogging", "boxing", "woodworking", "welding", "metalwork", "driving"],
+  "hobbies": [
+    {
+      "title": "Cycling",
+      "tag": "route/training",
+      "description": "I love going out on the bike, training, feeling the air, the effort, and the freedom of the road. It is a calm and focused space where I can disconnect from the noise and simply enjoy movement, nature, and the physical challenge.",
+      "items": ["cycling", "training", "Rogapa", "bikes"]
+    },
+    {
+      "title": "Boxing",
+      "tag": "focus/training",
+      "description": "I really enjoy the physical training side of boxing. It pushes me to bring out my best, makes me feel strong, focused, and full of energy. It helps me release tension, improve my condition, stay active, and build discipline.",
+      "items": ["Uruguay", "boxing", "La Blanqueada", "training", "punching bag"]
+    },
+    {
+      "title": "Jogging",
+      "tag": "run/training",
+      "description": "I like going out for a run. It keeps me active and lets me enjoy being outside. Running gives me a sense of freedom and helps me disconnect from the noise. It is a moment for myself, for thinking, moving, and following the rhythm of my steps.",
+      "items": ["10k", "10k for life", "Venezuela", "Uruguay", "running", "jogging"]
+    },
+    {
+      "title": "Salsa Casino",
+      "tag": "dance/fun",
+      "description": "Dancing salsa casino is one of my passions. I love the energy, rhythm, and connection created while dancing. It is a form of expression, fun, and social connection. I have also competed in Chile and Argentina.",
+      "items": ["Chile", "Argentina", "Dare Dance Chile", "Baila Casino", "Salsa Casino", "dance competitions"]
+    },
+    {
+      "title": "One Piece",
+      "tag": "anime/manga",
+      "description": "My favorite anime is One Piece. I love the story, the characters, and the world Eiichiro Oda has built. It has been with me for a long time and still surprises me with its turns, humor, friendship, adventure, and sense of overcoming limits.",
+      "items": ["One Piece", "Zoro", "Ace", "Whitebeard"]
+    },
+    {
+      "title": "Travel",
+      "tag": "tourism/adventure",
+      "description": "I love traveling, discovering new places, cultures, and people. Traveling gets me out of my comfort zone, teaches me new things, and creates lasting memories. I have been lucky to travel across several Latin American countries, and I am always looking for new routes to explore.",
+      "items": ["Argentina", "Chile", "Brazil", "Colombia", "Venezuela", "Uruguay", "travel", "adventures"]
+    },
+    {
+      "title": "Driving",
+      "tag": "escape/passion",
+      "description": "I love driving. I enjoy the feeling of control, speed, and freedom that comes with being behind the wheel. Driving lets me disconnect and enjoy the road. I liked it so much that I worked as a taxi and Uber driver, partly for the stories, the road, and meeting people.",
+      "items": ["Uber", "escape", "cycling", "driving", "passion", "cars"]
+    }
+  ]
+}

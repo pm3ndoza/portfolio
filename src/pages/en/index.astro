@@ -1,11 +1,11 @@
 ---
-import "../styles/global.css";
-import skillsData from "../data/skills.json";
-import projectsData from "../data/projects.json";
-import experienceData from "../data/experience.json";
-import profileData from "../data/profile.json";
-import hobbiesData from "../data/hobbies.json";
-import certificationsData from "../data/certifications.json";
+import "../../styles/global.css";
+import skillsData from "../../data/en/skills.json";
+import projectsData from "../../data/en/projects.json";
+import experienceData from "../../data/en/experience.json";
+import profileData from "../../data/en/profile.json";
+import hobbiesData from "../../data/en/hobbies.json";
+import certificationsData from "../../data/en/certifications.json";
 import.meta.env.BASE_URL;
 
 const projects = projectsData.projects;
@@ -46,7 +46,7 @@ const withBase = (path: string) => {
 };
 ---
 
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -62,38 +62,38 @@ const withBase = (path: string) => {
         <span class="path-dir"><b>~/portfolio</b></span>
         <span class="path-branch"><b>main</b></span>
       </div>
-      <div class="language-switch" aria-label="Selector de idioma">
-        <a class="active" href={withBase("/")}>ES</a>
-        <a href={withBase("/en/")}>EN</a>
+      <div class="language-switch" aria-label="Language selector">
+        <a href={withBase("/")}>ES</a>
+        <a class="active" href={withBase("/en/")}>EN</a>
       </div>
       <nav class="desktop-nav">
-        <a class="active" href="#home">01. inicio</a>
+        <a class="active" href="#home">01. home</a>
         <a href="#skills">02. skills</a>
         <a href="#projects">03. portfolio</a>
-        <a href="#experience">04. experiencia</a>
+        <a href="#experience">04. experience</a>
         <a href="#certifications">05. certs</a>
-        <a href="#about">06. sobre mi</a>
-        <a href="#hobbies">07. gustos</a>
-        <a href="#contact">08. contacto</a>
+        <a href="#about">06. about</a>
+        <a href="#hobbies">07. hobbies</a>
+        <a href="#contact">08. contact</a>
       </nav>
       <details class="nav-menu mobile-nav">
         <summary>&gt; menu</summary>
         <nav>
-          <a class="active" href="#home">01. inicio</a>
+          <a class="active" href="#home">01. home</a>
           <a href="#skills">02. skills</a>
           <a href="#projects">03. portfolio</a>
-          <a href="#experience">04. experiencia</a>
+          <a href="#experience">04. experience</a>
           <a href="#certifications">05. certs</a>
-          <a href="#about">06. sobre mi</a>
-          <a href="#hobbies">07. gustos</a>
-          <a href="#contact">08. contacto</a>
+          <a href="#about">06. about</a>
+          <a href="#hobbies">07. hobbies</a>
+          <a href="#contact">08. contact</a>
         </nav>
       </details>
     </header>
     <main>
       <section id="home" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 01. inicio</p>
+          <p class="eyebrow">&gt; 01. home</p>
         </div>
         <p class="terminal-section-command">&gt; cat whoami.txt</p>
         <div class="terminal-section-body">
@@ -109,13 +109,13 @@ const withBase = (path: string) => {
               </div>
 
               <div class="hero-actions">
-                <a class="button-primary" href="#projects">Ver mi trabajo →</a>
+                <a class="button-primary" href="#projects">View my work →</a>
                 <a
                   class="button-secondary"
                   href={withBase(profile.cvUrl)}
                   download
                 >
-                  Descargar CV ↓
+                  Download CV ↓
                 </a>
               </div>
             </div>
@@ -134,8 +134,8 @@ const withBase = (path: string) => {
                 <p><strong>Editor:</strong> vim</p>
                 <p><strong>User:</strong> pmendoza@githubpages</p>
                 <p><strong>Role:</strong> {profile.role}</p>
-                <p><strong>Ubicación:</strong> {profile.contact.location}</p>
-                <p><strong>Estado:</strong> {profile.availability}</p>
+                <p><strong>Location:</strong> {profile.contact.location}</p>
+                <p><strong>Status:</strong> {profile.availability}</p>
               </div>
             </aside>
           </div>
@@ -146,7 +146,7 @@ const withBase = (path: string) => {
         <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 02. skills</p>
           <p class="section-status">
-            &gt; {skills.length} grupos de skills cargados... aprendizaje continuo
+            &gt; {skills.length} skill groups loaded... continuous learning
           </p>
         </div>
         <p class="terminal-section-command">&gt; ls skills/</p>
@@ -180,7 +180,7 @@ const withBase = (path: string) => {
       <section id="projects" class="terminal-section">
         <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 03. portfolio</p>
-          <p class="section-count">{projects.length} proyectos</p>
+          <p class="section-count">{projects.length} projects</p>
         </div>
 
         <p class="terminal-section-command">&gt; ls projects/</p>
@@ -208,7 +208,7 @@ const withBase = (path: string) => {
                     <img
                       class="project-preview"
                       src={withBase(project.image)}
-                      alt={`Preview de ${project.title}`}
+                      alt={`Preview of ${project.title}`}
                       loading="lazy"
                     />
 
@@ -229,8 +229,8 @@ const withBase = (path: string) => {
       </section>
       <section id="experience" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 04. Experiencia Laboral</p>
-          <p class="section-count">{experiences.length} trabajos</p>
+          <p class="eyebrow">&gt; 04. work experience</p>
+          <p class="section-count">{experiences.length} jobs</p>
         </div>
         <p class="terminal-section-command">&gt; cat experience.log</p>
 
@@ -275,7 +275,7 @@ const withBase = (path: string) => {
 
       <section id="certifications" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 05. certificaciones</p>
+          <p class="eyebrow">&gt; 05. certifications</p>
           <p class="section-count">{certifications.length} certs</p>
         </div>
 
@@ -309,8 +309,8 @@ const withBase = (path: string) => {
                     >
                       {
                         certification.status?.toLowerCase().includes("expir")
-                          ? "expirada"
-                          : "verificada"
+                          ? "expired"
+                          : "verified"
                       }
                     </span>
                   </div>
@@ -318,7 +318,7 @@ const withBase = (path: string) => {
                   <div class="cert-content">
                     <p class="cert-issuer">{certification.issuer}</p>
                     <h2>{certification.name}</h2>
-                    <p class="cert-year">emitida: {certification.year}</p>
+                    <p class="cert-year">issued: {certification.year}</p>
                   </div>
 
                   <details class="cert-detail">
@@ -328,10 +328,10 @@ const withBase = (path: string) => {
 
                     <ul class="cert-verify-list">
                       <li>
-                        <span>emisor: {certification.issuer}</span>
+                        <span>issuer: {certification.issuer}</span>
                       </li>
                       <li>
-                        <span>estado: {certification.status}</span>
+                        <span>status: {certification.status}</span>
                       </li>
                       <li>
                         <a
@@ -339,7 +339,7 @@ const withBase = (path: string) => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          url de verificación
+                          verification url
                         </a>
                       </li>
                     </ul>
@@ -353,7 +353,7 @@ const withBase = (path: string) => {
 
       <section id="about" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 06. sobre mi</p>
+          <p class="eyebrow">&gt; 06. about me</p>
         </div>
 
         <p class="terminal-section-command">&gt; cat about.me</p>
@@ -373,7 +373,7 @@ const withBase = (path: string) => {
                 <p>profile:</p>
                 <p>&nbsp;&nbsp;name: "{profile.name}"</p>
                 <p>&nbsp;&nbsp;role: "{profile.role}"</p>
-                <p>&nbsp;&nbsp;modo: "{profile.profileConfig.mode}"</p>
+                <p>&nbsp;&nbsp;mode: "{profile.profileConfig.mode}"</p>
                 <p>&nbsp;&nbsp;focus: "{profile.profileConfig.focus}"</p>
                 <p>&nbsp;&nbsp;location: "{profile.profileConfig.location}"</p>
                 <p>&nbsp;&nbsp;prefers:</p>
@@ -401,7 +401,7 @@ const withBase = (path: string) => {
 
       <section id="hobbies" class="terminal-section crew-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 07. gustos / preferencias</p>
+          <p class="eyebrow">&gt; 07. hobbies / preferences</p>
           <p class="section-count">crew log</p>
         </div>
 
@@ -409,7 +409,7 @@ const withBase = (path: string) => {
 
         <div class="terminal-section-body">
           <div class="crew-log-layout">
-            <aside class="crew-map" aria-label="Mapa personal">
+            <aside class="crew-map" aria-label="Personal map">
               <div class="compass">
                 <span>N</span>
                 <span>E</span>
@@ -424,7 +424,7 @@ const withBase = (path: string) => {
               </div>
               <p>{hobbiesIntro}</p>
               <p class="crew-signal">&gt; {hobbiesSignal}</p>
-              <div class="crew-stamps" aria-label="Sellos personales">
+              <div class="crew-stamps" aria-label="Personal stamps">
                 {hobbiesStamps.map((stamp) => (
                   <span>{stamp}</span>
                 ))}
@@ -464,20 +464,20 @@ const withBase = (path: string) => {
 
       <section id="contact" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 08. contacto</p>
-          <p class="section-count">disponible</p>
+          <p class="eyebrow">&gt; 08. contact</p>
+          <p class="section-count">available</p>
         </div>
         <p class="terminal-section-command">&gt; cat contact.sh</p>
 
         <div class="terminal-section-body">
           <div class="contact-layout">
             <aside class="availability-card">
-              <h2>&gt; disponibilidad</h2>
+              <h2>&gt; availability</h2>
 
               <div class="available-now">
                 <span class="status-dot"></span>
                 <div>
-                  <strong>disponible para nuevas oportunidades</strong>
+                  <strong>available for new opportunities</strong>
                   <p>SRE / DevOps / Cloud</p>
                 </div>
               </div>
@@ -486,29 +486,29 @@ const withBase = (path: string) => {
                 <p>
                   <span class="contact-icon">◷</span>
                   <span>
-                    <strong>hora local</strong>
+                    <strong>local time</strong>
                     {profile.contact.localTime}
                   </span>
                 </p>
                 <p>
                   <span class="contact-icon">↯</span>
                   <span>
-                    <strong>tiempo de respuesta</strong>
+                    <strong>response time</strong>
                     {profile.contact.responseTime}
                   </span>
                 </p>
                 <p>
                   <span class="contact-icon">◎</span>
                   <span>
-                    <strong>modo</strong>
-                    asincrónico / remoto friendly
+                    <strong>mode</strong>
+                    asynchronous / remote friendly
                   </span>
                 </p>
               </div>
             </aside>
 
             <aside class="channels-card">
-              <h2>&gt; canales_preferidos</h2>
+              <h2>&gt; preferred_channels</h2>
 
               <a
                 href={profile.contact.linkedin}
@@ -524,7 +524,7 @@ const withBase = (path: string) => {
                   <strong>LinkedIn</strong>
                   /pm3ndoza
                 </span>
-                <em>&gt; abrir perfil</em>
+                <em>&gt; open profile</em>
               </a>
 
               <a
@@ -541,7 +541,7 @@ const withBase = (path: string) => {
                   <strong>GitHub</strong>
                   /pm3ndoza
                 </span>
-                <em>&gt; ver repos</em>
+                <em>&gt; view repos</em>
               </a>
 
               <a
@@ -558,20 +558,20 @@ const withBase = (path: string) => {
                   <strong>Instagram</strong>
                   personal log
                 </span>
-                <em>&gt; abrir feed</em>
+                <em>&gt; open feed</em>
               </a>
             </aside>
 
             <form class="contact-form">
               <div class="form-heading">
-                <h2>&gt; mensaje_rapido</h2>
-                <span>borrador</span>
+                <h2>&gt; quick_message</h2>
+                <span>draft</span>
               </div>
 
               <div class="form-fields">
                 <label>
                   name:
-                  <input type="text" name="name" placeholder="Tu nombre" />
+                  <input type="text" name="name" placeholder="Your name" />
                 </label>
 
                 <label>
@@ -579,38 +579,38 @@ const withBase = (path: string) => {
                   <input
                     type="email"
                     name="email"
-                    placeholder="tu@email.com"
+                    placeholder="you@email.com"
                   />
                 </label>
 
                 <label>
-                  mensaje:
+                  message:
                   <textarea
                     name="message"
-                    placeholder="Contame en qué estás pensando..."
+                    placeholder="Tell me what you are thinking about..."
                   ></textarea>
                 </label>
               </div>
 
               <pre class="json-preview" id="contact-json-preview">{`{
-  "ruta": "portfolio/contact",
-  "para": "${profile.contact.email}",
-  "de": "",
-  "respuesta_a": "",
-  "mensaje": "",
-  "estado": "borrador",
-  "respuesta_estimada": "${profile.contact.responseTime}"
+  "route": "portfolio/contact",
+  "to": "${profile.contact.email}",
+  "from": "",
+  "reply_to": "",
+  "message": "",
+  "status": "draft",
+  "reply_expected": "${profile.contact.responseTime}"
 }`}</pre>
 
-              <button type="button">&gt; enviar mensaje</button>
+              <button type="button">&gt; send message</button>
             </form>
           </div>
 
           <div class="contact-status">
-            <span>estado: {profile.contact.status}</span>
-            <span>actualizado: borrador en vivo</span>
-            <span>canal: portfolio/contact</span>
-            <span>modo: async</span>
+            <span>status: {profile.contact.status}</span>
+            <span>updated: live draft</span>
+            <span>channel: portfolio/contact</span>
+            <span>mode: async</span>
           </div>
         </div>
       </section>
@@ -622,7 +622,7 @@ const withBase = (path: string) => {
         <span class="path-branch"><b>fin</b></span>
       </div>
 
-      <p>Fin del portfolio. Gracias por visitar.</p>
+      <p>End of portfolio. Thanks for visiting.</p>
     </footer>
     <script>
       const contactForm = document.querySelector(".contact-form");
@@ -632,13 +632,13 @@ const withBase = (path: string) => {
         const updatePreview = () => {
           const formData = new FormData(contactForm);
           const payload = {
-            ruta: "portfolio/contact",
-            para: "{profile.contact.email}",
-            de: String(formData.get("name") || ""),
-            respuesta_a: String(formData.get("email") || ""),
-            mensaje: String(formData.get("message") || ""),
-            estado: "borrador",
-            respuesta_estimada: "{profile.contact.responseTime}",
+            route: "portfolio/contact",
+            to: "{profile.contact.email}",
+            from: String(formData.get("name") || ""),
+            reply_to: String(formData.get("email") || ""),
+            message: String(formData.get("message") || ""),
+            status: "draft",
+            reply_expected: "{profile.contact.responseTime}",
           };
 
           contactPreview.textContent = JSON.stringify(payload, null, 2);

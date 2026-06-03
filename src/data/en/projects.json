@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "title": "Project 1",
+      "description": "Short project description, the problem it solves, and the technologies it uses.",
+      "url": "https://github.com/pm3ndoza/k8co",
+      "command": "view code →",
+      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "tags": ["Demo", "Portfolio"]
+    },
+    {
+      "title": "Project 2",
+      "description": "Short project description, what you learned, and the technical detail you want to highlight.",
+      "url": "https://github.com/pm3ndoza/k8co",
+      "command": "view code →",
+      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "tags": ["Learning", "Automation"]
+    },
+    {
+      "title": "Project 3",
+      "description": "Short project description, ideally connected to DevOps, cloud, or Python.",
+      "url": "https://github.com/pm3ndoza/k8co",
+      "command": "view code →",
+      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "tags": ["DevOps", "Python"]
+    },
+    {
+      "title": "k8co",
+      "description": "Tool to switch Kubernetes contexts quickly, with autocomplete support.",
+      "url": "https://github.com/pm3ndoza/k8co",
+      "command": "view code →",
+      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "tags": ["Bash", "Kubernetes", "CLI"]
+    },
+    {
+      "title": "Browser Docker",
+      "description": "Dockerfile to run a browser inside a container with hardware acceleration support.",
+      "url": "https://github.com/pm3ndoza/k8co",
+      "command": "view code →",
+      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "tags": ["Docker", "Linux", "Browser"]
+    },
+    {
+      "title": "Terraform",
+      "description": "Terraform project to deploy basic AWS infrastructure with VPC, subnets, EC2, and RDS.",
+      "url": "https://github.com/pm3ndoza/k8co",
+      "command": "view code →",
+      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "tags": ["Terraform", "AWS", "IaC"]
+    }
+  ]
+}
