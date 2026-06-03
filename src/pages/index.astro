@@ -63,33 +63,33 @@ const withBase = (path: string) => {
         <span class="path-branch"><b>main</b></span>
       </div>
       <nav class="desktop-nav">
-        <a class="active" href="#home">01. home</a>
+        <a class="active" href="#home">01. inicio</a>
         <a href="#skills">02. skills</a>
         <a href="#projects">03. portfolio</a>
-        <a href="#experience">04. experience</a>
+        <a href="#experience">04. experiencia</a>
         <a href="#certifications">05. certs</a>
-        <a href="#about">06. about</a>
+        <a href="#about">06. sobre mi</a>
         <a href="#hobbies">07. gustos</a>
-        <a href="#contact">08. contact</a>
+        <a href="#contact">08. contacto</a>
       </nav>
       <details class="nav-menu mobile-nav">
         <summary>&gt; menu</summary>
         <nav>
-          <a class="active" href="#home">01. home</a>
+          <a class="active" href="#home">01. inicio</a>
           <a href="#skills">02. skills</a>
           <a href="#projects">03. portfolio</a>
-          <a href="#experience">04. experience</a>
+          <a href="#experience">04. experiencia</a>
           <a href="#certifications">05. certs</a>
-          <a href="#about">06. about</a>
+          <a href="#about">06. sobre mi</a>
           <a href="#hobbies">07. gustos</a>
-          <a href="#contact">08. contact</a>
+          <a href="#contact">08. contacto</a>
         </nav>
       </details>
     </header>
     <main>
       <section id="home" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 01. home</p>
+          <p class="eyebrow">&gt; 01. inicio</p>
         </div>
         <p class="terminal-section-command">&gt; cat whoami.txt</p>
         <div class="terminal-section-body">
@@ -130,8 +130,8 @@ const withBase = (path: string) => {
                 <p><strong>Editor:</strong> vim</p>
                 <p><strong>User:</strong> pmendoza@githubpages</p>
                 <p><strong>Role:</strong> {profile.role}</p>
-                <p><strong>Location:</strong> {profile.contact.location}</p>
-                <p><strong>Status:</strong> {profile.availability}</p>
+                <p><strong>Ubicación:</strong> {profile.contact.location}</p>
+                <p><strong>Estado:</strong> {profile.availability}</p>
               </div>
             </aside>
           </div>
@@ -142,7 +142,7 @@ const withBase = (path: string) => {
         <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 02. skills</p>
           <p class="section-status">
-            &gt; {skills.length} skill groups cargados... aprendizaje continuo
+            &gt; {skills.length} grupos de skills cargados... aprendizaje continuo
           </p>
         </div>
         <p class="terminal-section-command">&gt; ls skills/</p>
@@ -176,7 +176,7 @@ const withBase = (path: string) => {
       <section id="projects" class="terminal-section">
         <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 03. portfolio</p>
-          <p class="section-count">{projects.length} projects</p>
+          <p class="section-count">{projects.length} proyectos</p>
         </div>
 
         <p class="terminal-section-command">&gt; ls projects/</p>
@@ -226,7 +226,7 @@ const withBase = (path: string) => {
       <section id="experience" class="terminal-section">
         <div class="terminal-section-bar">
           <p class="eyebrow">&gt; 04. Experiencia Laboral</p>
-          <p class="section-count">{experiences.length} jobs</p>
+          <p class="section-count">{experiences.length} trabajos</p>
         </div>
         <p class="terminal-section-command">&gt; cat experience.log</p>
 
@@ -295,13 +295,26 @@ const withBase = (path: string) => {
                       )}
                     </div>
 
-                    <span class="cert-status">verified</span>
+                    <span
+                      class:list={[
+                        "cert-status",
+                        certification.status?.toLowerCase().includes("expir")
+                          ? "is-expired"
+                          : "is-verified",
+                      ]}
+                    >
+                      {
+                        certification.status?.toLowerCase().includes("expir")
+                          ? "expirada"
+                          : "verificada"
+                      }
+                    </span>
                   </div>
 
                   <div class="cert-content">
                     <p class="cert-issuer">{certification.issuer}</p>
                     <h2>{certification.name}</h2>
-                    <p class="cert-year">issued: {certification.year}</p>
+                    <p class="cert-year">emitida: {certification.year}</p>
                   </div>
 
                   <details class="cert-detail">
@@ -311,10 +324,10 @@ const withBase = (path: string) => {
 
                     <ul class="cert-verify-list">
                       <li>
-                        <span>issuer: {certification.issuer}</span>
+                        <span>emisor: {certification.issuer}</span>
                       </li>
                       <li>
-                        <span>code: {certification.verificationCode}</span>
+                        <span>estado: {certification.status}</span>
                       </li>
                       <li>
                         <a
@@ -322,7 +335,7 @@ const withBase = (path: string) => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          verify_url
+                          url de verificación
                         </a>
                       </li>
                     </ul>
@@ -336,7 +349,7 @@ const withBase = (path: string) => {
 
       <section id="about" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 06. about me</p>
+          <p class="eyebrow">&gt; 06. sobre mi</p>
         </div>
 
         <p class="terminal-section-command">&gt; cat about.me</p>
@@ -356,7 +369,7 @@ const withBase = (path: string) => {
                 <p>profile:</p>
                 <p>&nbsp;&nbsp;name: "{profile.name}"</p>
                 <p>&nbsp;&nbsp;role: "{profile.role}"</p>
-                <p>&nbsp;&nbsp;mode: "{profile.profileConfig.mode}"</p>
+                <p>&nbsp;&nbsp;modo: "{profile.profileConfig.mode}"</p>
                 <p>&nbsp;&nbsp;focus: "{profile.profileConfig.focus}"</p>
                 <p>&nbsp;&nbsp;location: "{profile.profileConfig.location}"</p>
                 <p>&nbsp;&nbsp;prefers:</p>
@@ -447,20 +460,20 @@ const withBase = (path: string) => {
 
       <section id="contact" class="terminal-section">
         <div class="terminal-section-bar">
-          <p class="eyebrow">&gt; 08. contact</p>
-          <p class="section-count">available</p>
+          <p class="eyebrow">&gt; 08. contacto</p>
+          <p class="section-count">disponible</p>
         </div>
         <p class="terminal-section-command">&gt; cat contact.sh</p>
 
         <div class="terminal-section-body">
           <div class="contact-layout">
             <aside class="availability-card">
-              <h2>&gt; availability</h2>
+              <h2>&gt; disponibilidad</h2>
 
               <div class="available-now">
                 <span class="status-dot"></span>
                 <div>
-                  <strong>available for new opportunities</strong>
+                  <strong>disponible para nuevas oportunidades</strong>
                   <p>SRE / DevOps / Cloud</p>
                 </div>
               </div>
@@ -469,29 +482,29 @@ const withBase = (path: string) => {
                 <p>
                   <span class="contact-icon">◷</span>
                   <span>
-                    <strong>local time</strong>
+                    <strong>hora local</strong>
                     {profile.contact.localTime}
                   </span>
                 </p>
                 <p>
                   <span class="contact-icon">↯</span>
                   <span>
-                    <strong>response time</strong>
+                    <strong>tiempo de respuesta</strong>
                     {profile.contact.responseTime}
                   </span>
                 </p>
                 <p>
                   <span class="contact-icon">◎</span>
                   <span>
-                    <strong>mode</strong>
-                    async / remote friendly
+                    <strong>modo</strong>
+                    asincrónico / remoto friendly
                   </span>
                 </p>
               </div>
             </aside>
 
             <aside class="channels-card">
-              <h2>&gt; preferred_channels</h2>
+              <h2>&gt; canales_preferidos</h2>
 
               <a
                 href={profile.contact.linkedin}
@@ -507,7 +520,7 @@ const withBase = (path: string) => {
                   <strong>LinkedIn</strong>
                   /pm3ndoza
                 </span>
-                <em>&gt; open link</em>
+                <em>&gt; abrir perfil</em>
               </a>
 
               <a
@@ -524,7 +537,7 @@ const withBase = (path: string) => {
                   <strong>GitHub</strong>
                   /pm3ndoza
                 </span>
-                <em>&gt; view repos</em>
+                <em>&gt; ver repos</em>
               </a>
 
               <a
@@ -541,14 +554,14 @@ const withBase = (path: string) => {
                   <strong>Instagram</strong>
                   personal log
                 </span>
-                <em>&gt; open feed</em>
+                <em>&gt; abrir feed</em>
               </a>
             </aside>
 
             <form class="contact-form">
               <div class="form-heading">
-                <h2>&gt; quick_message</h2>
-                <span>draft</span>
+                <h2>&gt; mensaje_rapido</h2>
+                <span>borrador</span>
               </div>
 
               <div class="form-fields">
@@ -567,7 +580,7 @@ const withBase = (path: string) => {
                 </label>
 
                 <label>
-                  message:
+                  mensaje:
                   <textarea
                     name="message"
                     placeholder="Contame en qué estás pensando..."
@@ -576,36 +589,36 @@ const withBase = (path: string) => {
               </div>
 
               <pre class="json-preview" id="contact-json-preview">{`{
-  "route": "portfolio/contact",
-  "to": "${profile.contact.email}",
-  "from": "",
-  "reply_to": "",
-  "message": "",
-  "status": "draft",
-  "reply_expected": "${profile.contact.responseTime}"
+  "ruta": "portfolio/contact",
+  "para": "${profile.contact.email}",
+  "de": "",
+  "respuesta_a": "",
+  "mensaje": "",
+  "estado": "borrador",
+  "respuesta_estimada": "${profile.contact.responseTime}"
 }`}</pre>
 
-              <button type="button">&gt; send message</button>
+              <button type="button">&gt; enviar mensaje</button>
             </form>
           </div>
 
           <div class="contact-status">
-            <span>status: {profile.contact.status}</span>
-            <span>updated: live draft</span>
-            <span>channel: portfolio/contact</span>
-            <span>mode: async</span>
+            <span>estado: {profile.contact.status}</span>
+            <span>actualizado: borrador en vivo</span>
+            <span>canal: portfolio/contact</span>
+            <span>modo: async</span>
           </div>
         </div>
       </section>
     </main>
     <footer class="footer-bar">
       <div class="terminal-path">
-        <span>pmendoza@githubpages</span>
-        <span>~/portfolio</span>
-        <span>main</span>
+        <span class="path-user"><b>user@devbox</b></span>
+        <span class="path-dir"><b>~/portfolio</b></span>
+        <span class="path-branch"><b>fin</b></span>
       </div>
 
-      <p>"{profile.summary}"</p>
+      <p>Fin del portfolio. Gracias por visitar.</p>
     </footer>
     <script>
       const contactForm = document.querySelector(".contact-form");
@@ -615,13 +628,13 @@ const withBase = (path: string) => {
         const updatePreview = () => {
           const formData = new FormData(contactForm);
           const payload = {
-            route: "portfolio/contact",
-            to: "{profile.contact.email}",
-            from: String(formData.get("name") || ""),
-            reply_to: String(formData.get("email") || ""),
-            message: String(formData.get("message") || ""),
-            status: "draft",
-            reply_expected: "{profile.contact.responseTime}",
+            ruta: "portfolio/contact",
+            para: "{profile.contact.email}",
+            de: String(formData.get("name") || ""),
+            respuesta_a: String(formData.get("email") || ""),
+            mensaje: String(formData.get("message") || ""),
+            estado: "borrador",
+            respuesta_estimada: "{profile.contact.responseTime}",
           };
 
           contactPreview.textContent = JSON.stringify(payload, null, 2);

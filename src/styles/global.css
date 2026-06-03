@@ -411,7 +411,7 @@ section + section {
 .footer-bar {
   width: 100%;
   margin: 1rem 0 0;
-  padding: 0.8rem 1rem;
+  padding: 0.55rem 1rem;
   border: 1px solid var(--border);
   border-left: 0;
   border-right: 0;
@@ -421,12 +421,19 @@ section + section {
   align-items: center;
   gap: 1rem;
   background: rgba(6, 27, 33, 0.9);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
 }
 
 .footer-bar p {
   margin: 0;
   color: var(--muted);
+  font-weight: 700;
+  text-align: right;
+}
+
+.footer-bar p::before {
+  content: "status: ";
+  color: var(--accent-green);
 }
 
 /* Cards */
@@ -826,8 +833,8 @@ article h2 {
 .cert-badge {
   display: grid;
   place-items: center;
-  width: 5rem;
-  height: 5rem;
+  width: 5.25rem;
+  height: 5.25rem;
   border: 1px solid color-mix(in srgb, var(--section-accent) 48%, var(--border));
   border-radius: 6px;
   background: rgba(3, 16, 20, 0.68);
@@ -838,8 +845,8 @@ article h2 {
 
 .cert-badge img {
   display: block;
-  max-width: 3.8rem;
-  max-height: 3.8rem;
+  max-width: 4rem;
+  max-height: 4rem;
   object-fit: contain;
 }
 
@@ -852,13 +859,22 @@ article h2 {
 
 .cert-status {
   padding: 0.25rem 0.45rem;
-  border: 1px solid color-mix(in srgb, var(--section-accent) 42%, var(--border));
   border-radius: 4px;
-  color: var(--section-accent, var(--accent));
-  background: color-mix(in srgb, var(--section-accent) 8%, transparent);
   font-size: 0.68rem;
   font-weight: 700;
   line-height: 1;
+}
+
+.cert-status.is-verified {
+  border: 1px solid color-mix(in srgb, var(--section-accent) 42%, var(--border));
+  color: var(--section-accent, var(--accent));
+  background: color-mix(in srgb, var(--section-accent) 8%, transparent);
+}
+
+.cert-status.is-expired {
+  border: 1px solid rgba(248, 113, 113, 0.42);
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
 }
 
 .cert-content {
