@@ -1,49 +1,49 @@
 {
-  "intro": "Fuera del teclado tambien construyo, entreno, viajo, cocino, arreglo cosas y colecciono historias. Esta parte es menos CV y mas bitacora.",
-  "signal": "no todo lo que forma a una persona entra en una job description",
-  "stamps": ["Uruguay", "Argentina", "Chile", "Colombia", "Venezuela", "motos", "taller", "anime"],
+  "intro": "Fuera del teclado tambien Tengo una vida, un emprendimiento, entreno, mascotas, colecciono historias. Esta parte es menos CV y mas yo, con mis gustos, mis marcas, mis caminos. No todo lo que forma a una persona entra en una job description, y esta es la parte donde comparto un poco de lo que me gusta, lo que me mueve y lo que me hace ser quien soy.",
+  "signal": "No todo en la vida es trabajo.",
+  "stamps": ["Uruguay", "Brasil" , "Argentina", "Chile", "Colombia", "Venezuela", "motos", "autos", "Salsa Cacino", "Pasteleria", "anime", "Manga", "One Piece", "Ciclismo", "jogging", "boxeo", "carpinteria", "soldadura", "metalurgica", "Driving"],
   "hobbies": [
     {
-      "title": "Movimiento",
-      "tag": "route/training",
-      "description": "Ciclismo, jogging, boxeo, salsa casino y rutas en moto: energia, ritmo, disciplina y cabeza despejada.",
-      "items": ["ciclismo", "jogging", "boxeo", "salsa casino", "motos"]
+      "title": "Ciclismo",
+      "tag": "Ruta/Entrenamiento",
+      "description": "Me encanta salir ha hacer ruta en la bicicleta, entrenar, sentir el aire, el esfuerzo y la libertad de la ruta. Es un momento de calma, de foco y de conexión conmigo mismo, es un espacio donde puedo desconectar del ruido y simplemente disfrutar del movimiento, la naturaleza y el desafío físico.",
+      "items": ["ciclismo", "Entrenamiento", "Rogapa", "Bicicletas"]
     },
     {
-      "title": "Viajes & Rutas",
-      "tag": "map/passport",
-      "description": "Me gusta viajar, conocer paises y hacer ruta. Por ahora el mapa ya paso por Uruguay, Argentina, Chile, Colombia y Venezuela.",
-      "items": ["Uruguay", "Argentina", "Chile", "Colombia", "Venezuela", "ruta en moto"]
+      "title": "Boxeo",
+      "tag": "focus/Entrenamiento",
+      "description": "La parte del entrenamiento fisico que te da el boxeo me encanta, lleva a sacar lo mejor de mi, me hace sentir fuerte, enfocado y con energia. Es un deporte que me ayuda a liberar tensiones, mejorar mi condicion fisica y mantenerme activo, ademas de ser una forma de disciplina y superacion personal.",
+      "items": ["Uruguay", "Boxeo", "La Blanqueada", "Entrenamiento", "Saco de boxeo"]
     },
     {
-      "title": "Oficios & Manos",
-      "tag": "workshop/craft",
-      "description": "Me gusta aprender haciendo: cocina, carpinteria, soldadura y trabajos donde el resultado se toca.",
-      "items": ["pasteleria", "carpinteria", "soldadura", "metalurgia"]
+      "title": "Jogging",
+      "tag": "Trote/Entrenamiento",
+      "description": "me gusta salir a correr, es una forma de ejercicio que me ayuda a mantenerme activo y disfrutar del aire libre. Correr me da una sensación de libertad y me permite desconectar del ruido, es un momento para mi, para pensar, para sentir el movimiento y simplemente disfrutar del ritmo de mis pasos.",
+      "items": ["10k", "10k por la vida", "Venezuela", "Uruguay", "Correr", "Running", "Trote"]
     },
     {
-      "title": "Rutas Vividas",
-      "tag": "street/log",
-      "description": "Fui taxista, Uber, mesero, trabaje en construccion y metalurgias. Mucha calle, mucho oficio, mucha adaptacion.",
-      "items": ["taxi", "Uber", "mesero", "construccion"]
+      "title": "Salsa Casino",
+      "tag": "Baile/Diversion",
+      "description": "Bailar salsa casino es una de mis pasiones, me encanta la energia, el ritmo y la conexion que se crea al bailar. Es una forma de expresion, de diversion y de socializacion, he ido a competir en Chile y Argentina.",
+      "items": ["Chile", "Argentina", "Dare Dance Chile", "Baila Casino", "Salsa Casino", "Competencias de baile"]
     },
     {
-      "title": "Historias",
+      "title": "One Piece",
       "tag": "anime/manga",
-      "description": "Me gustan las historias de tripulaciones, lealtad, sacrificio y personajes que avanzan aunque el mapa no este completo.",
-      "items": ["One Piece", "Zoro", "Ace", "Barbablanca", "Fullmetal Alchemist"]
+      "description": "Mi anime Favorito es One Piece, me encanta la historia, los personajes y el mundo que ha creado Eiichiro Oda. Es una serie que me ha acompañado durante mucho tiempo y que siempre me sorprende con sus giros argumentales, su humor y su mensaje de amistad, aventura y superacion.",
+      "items": ["One Piece", "Zoro", "Ace", "Barbablanca"]
     },
     {
-      "title": "Compania2",
-      "tag": "home/base2",
-      "description": "Tambien estan los gustos simples: perros, casa, detalles cotidianos y cosas que mantienen los pies en la tierra.",
-      "items": ["perros", "vida diaria", "familia", "calma"]
+      "title": "Viajes",
+      "tag": "Turismo/Aventura",
+      "description": "Me encanta viajar, conocer nuevos lugares, culturas y personas. Viajar me da la oportunidad de salir de mi zona de confort, aprender cosas nuevas y crear recuerdos inolvidables. He tenido la suerte de viajar por varios países de Latinoamérica y siempre estoy buscando nuevas aventuras para explorar.",
+      "items": ["Argentina", "Chile", "Brasil", "Colombia", "Venezuela", "Uruguay", "Viajar", "Aventuras"]
     },
     {
-      "title": "Compania3",
-      "tag": "home/base3",
-      "description": "Tambien estan los gustos simples: perros, casa, detalles cotidianos y cosas que mantienen los pies en la tierra.",
-      "items": ["perros", "vida diaria", "familia", "calma"]
+      "title": "Maneajar",
+      "tag": "Distraccion/Pasión",
+      "description": "Me encanta manejar, es una de mis pasiones, me gusta sentir el control del volante, la velocidad y la libertad que me da el conducir. Manejar me permite desconectar, disfrutar del camino y simplemente sentir el placer de estar al volante, Me gusta tanto manejar que trabaje de chofer de taci y de Uber solo por la anecdota de manejar y conocer gente.",
+      "items": ["Uber", "Distraccion", "ciclismo", "manejar", "pasión", "autos"]
     }
   ]
 }

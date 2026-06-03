@@ -1,36 +1,37 @@
 {
   "name": "Pedro Mendoza",
-  "role": "SRE / DevOps Engineer | Cloud | Automatización",
-  "hero": "Construyo infraestructura confiable, pipelines eficientes y sistemas pensados para operar bien en producción.",
+  "role": "SRE / DevOps Engineer | Cloud ",
+  "hero": "Ingeniero DevOps y Site Reliability Engineer apasionado por la automatización, la confiabilidad y la escalabilidad de plataformas modernas. Con más de 5 años de experiencia diseñando, operando y optimizando infraestructuras híbridas y nativas de la nube, ayudo a las organizaciones a acelerar sus ciclos de entrega mediante prácticas DevOps, Kubernetes, CI/CD e Infraestructura como Código. Mi enfoque está en construir sistemas resilientes, observables y preparados para crecer junto con las necesidades del negocio.",
   "availability": "Disponible para oportunidades",
-  "cvUrl": "/cv.pdf",
+  "cvUrl": "/assets/cv/Pedro_MendozaCV.pdf",
   "photo": "",
   "summary": "siempre construyendo, siempre aprendiendo",
   "aboutIntro": "Soy Pedro Mendoza.",
   "about": [
-    "Trabajo en infraestructura, automatización y operación de servicios productivos con foco en confiabilidad, claridad y mejora continua.",
-    "Me gusta convertir procesos repetitivos en herramientas simples, observar los sistemas con criterio y construir bases técnicas que ayuden a otros equipos a moverse mejor."
+    "Hola, soy Pedro Mendoza. Nací en Venezuela, me gradué como Ingeniero en Informática en la Universidad Nacional Experimental del Táchira y actualmente vivo en Uruguay.",
+    "A lo largo de mi carrera he encontrado en la tecnología una combinación perfecta entre curiosidad, aprendizaje continuo y resolución de problemas. Me apasiona entender cómo funcionan las cosas detrás de escena, construir soluciones útiles y simplificar procesos complejos mediante la automatización.",
+    "Fuera de los entornos productivos y la infraestructura, disfruto explorando nuevas herramientas, aprendiendo constantemente y compartiendo conocimiento con otros profesionales. Creo que las mejores soluciones nacen de la combinación entre la excelencia técnica, la colaboración y una genuina curiosidad por mejorar cada día."
   ],
   "profileConfig": {
-    "mode": "building reliable systems",
+    "mode": "Construyendo mi futuro",
     "focus": "cloud, observability, automation",
     "location": "Uruguay",
     "prefers": [
-      "infraestructura simple",
-      "automatización útil",
-      "observabilidad accionable",
-      "operación tranquila"
+      "Cloud ",
+      "observabilidad",
+      "Kubernetes",
+      "Seguridad"
     ]
   },
-  "values": ["reliability", "clarity", "ownership", "learning"],
+  "values": ["confiabilidad", "SRE", "DevOps", "aprendizaje"],
   "contact": {
     "email": "pmendozauy@gmail.com",
     "github": "https://github.com/pm3ndoza",
     "linkedin": "https://www.linkedin.com/in/pm3ndoza/",
-    "instagram": "https://www.instagram.com/",
+    "instagram": "https://www.instagram.com/pm3ndoza",
     "localTime": "America/Montevideo",
     "responseTime": "24-48h",
-    "status": "accepting conversations",
+    "status": "aceptando conversaciones",
     "location": "Uruguay",
     "city": "Montevideo"
   }

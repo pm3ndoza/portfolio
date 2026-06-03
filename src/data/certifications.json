@@ -1,22 +1,31 @@
 {
   "certifications": [
     {
-      "name": "AWS Certified Cloud Practitioner",
-      "issuer": "Amazon Web Services",
-      "year": "2026",
-      "badge": "assets/certifications/aws-cloud-practitioner.svg",
-      "verificationCode": "PENDING",
-      "url": "https://example.com",
-      "command": "view credential"
+      "name": "GitOps Fundamentals",
+      "issuer": "Codefresh",
+      "year": "April 25, 2023",
+      "badge": "assets/certifications/gitops-fundamentals.png",
+      "status": "Credencial verificada",
+      "url": "https://www.credly.com/badges/40c97f8d-6dff-4db8-85c3-10d9665399d5/public_url",
+      "command": "ver credencial"
     },
     {
-      "name": "Scrum Master",
-      "issuer": "Scrum",
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "year": "October 26, 2022",
+      "badge": "assets/certifications/aws-certified-cloud-practitioner.png",
+      "status": "Expirada: 26 de octubre de 2025",
+      "url": "https://www.credly.com/badges/92e36154-b004-4612-9cc5-711ce1dde289/public_url",
+      "command": "ver credencial"
+    },
+    {
+      "name": "Professional Scrum Master I",
+      "issuer": "Scrum.org",
       "year": "2026",
-      "badge": "assets/certifications/scrum-master.svg",
-      "verificationCode": "PENDING",
-      "url": "https://example.com",
-      "command": "view credential"
+      "badge": "assets/certifications/professional-scrum-master-i-psm-i.png",
+      "status": "Credencial verificada",
+      "url": "https://www.credly.com/badges/15ac4ad1-712b-43a0-85d3-e78442bda667/public_url",
+      "command": "ver credencial"
     }
   ]
 }

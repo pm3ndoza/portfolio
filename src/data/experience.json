@@ -1,63 +1,94 @@
 {
   "experience": [
     {
-      "period": "2024 - Presente",
+      "period": "Marzo 2026 - Presente",
       "role": "SRE / DevOps Engineer",
       "company": "Pormel",
       "description": "Automatización de infraestructura, observabilidad y operación de servicios productivos en entornos cloud.",
-      "tags": ["AWS", "Kubernetes", "Terraform", "Grafana"],
+      "tags": ["AWS", "Azure", "Huawei", "Terraform", "Grafana", "ArgoCD", "Kubernetes"],
       "highlights": [
-        "Automatización de despliegues y procesos repetitivos.",
-        "Mejoras en monitoreo, alertas y respuesta operativa.",
-        "Soporte a equipos de desarrollo en entornos cloud."
+        "Automatización de despliegues y reducción de tiempos en procesos de infraestructura.",
+        "Implementación de monitoreo y prácticas de observabilidad para servicios productivos.",
+        "Establecimiento de prácticas SRE para mejorar confiabilidad, escalabilidad y operación.",
+        "Implementación de alertas y procesos de respuesta a incidentes para mejorar la resiliencia."
       ]
     },
     {
-      "period": "2022 - 2024",
+      "period": "Abril 2024 - Noviembre 2025",
+      "role": "Site Reliability Engineer",
+      "company": "UKG Ultimate Kronos Group",
+      "description": "Operación y mejora de plataformas SaaS empresariales, pipelines CI/CD, observabilidad y entornos productivos híbridos.",
+      "tags": ["Concourse", "GitHub Actions", "Kafka", "Datadog", "K6", "Grafana Cloud"],
+      "highlights": [
+        "Optimización de pipelines CI/CD con Concourse y GitHub Actions, eliminando etapas de build obsoletas en Python 2.8.",
+        "Automatización de procesos de self-healing para workers de Concourse, reduciendo downtime e intervención manual.",
+        "Liderazgo en migraciones de Kafka desde versiones deprecadas hacia versiones soportadas, mejorando estabilidad y seguridad.",
+        "Soporte de 6 entornos productivos sobre infraestructuras híbridas bare-metal, OpenStack y cloud.",
+        "Participación en migraciones de observabilidad usando Datadog, K6, Telegraf y Grafana Cloud."
+      ]
+    },
+    {
+      "period": "Abril 2023 - Abril 2024",
       "role": "Cloud Engineer",
-      "company": "Tech Solutions",
-      "description": "Diseño e implementación de plataformas cloud escalables para aplicaciones empresariales.",
-      "tags": ["AWS", "Docker", "EKS", "CI/CD"],
+      "company": "F1RST / Santander Group",
+      "description": "Soporte y operación de sistemas productivos bancarios en Azure, Kubernetes, Argo CD y pipelines Azure DevOps.",
+      "tags": ["Azure", "Azure DevOps", "Argo CD", "Kubernetes", "Terraform"],
       "highlights": [
-        "Migración de aplicaciones on-premise a AWS.",
-        "Implementación de pipelines CI/CD con GitHub Actions.",
-        "Reducción de tiempos de despliegue en un 70%."
+        "Soporte de sistemas productivos basados en Azure para plataformas bancarias.",
+        "Creación y optimización de pipelines CI/CD en Azure DevOps.",
+        "Soporte de despliegues mediante Argo CD y Kubernetes.",
+        "Uso de Terraform para importar, ordenar y gestionar infraestructura."
       ]
     },
     {
-      "period": "2021 - 2022",
-      "role": "DevOps Engineer",
-      "company": "Innovatech",
-      "description": "Desarrollo de herramientas internas para automatizar procesos operativos y mejorar la confiabilidad de los servicios.",
-      "tags": ["Python", "Terraform", "Jenkins", "Linux"],
+      "period": "Febrero 2022 - Diciembre 2022",
+      "role": "Cloud Engineer",
+      "company": "Platzi",
+      "description": "Soporte de plataformas cloud, clusters Kubernetes, entornos efímeros, pipelines CI/CD y repositorios Terraform.",
+      "tags": ["Kubernetes", "Docker", "containerd", "Jenkins", "GitHub Actions", "Terraform"],
       "highlights": [
-        "Creación de scripts para automatización de tareas administrativas.",
-        "Gestión de infraestructura como código con Terraform.",
-        "Optimización de pipelines de integración continua."
+        "Migración de pipelines CI desde Jenkins hacia GitHub Actions, reduciendo tiempos de ejecución aproximadamente un 10%.",
+        "Participación en resolución de incidentes durante la migración de Docker a containerd.",
+        "Soporte de clusters Kubernetes y entornos efímeros.",
+        "Mejoras en repositorios Terraform y dashboards de observabilidad."
       ]
     },
     {
-      "period": "2020 - 2021",
-      "role": "Systems Administrator",
-      "company": "Digital Services",
-      "description": "Administración de servidores Linux y soporte a plataformas de producción.",
-      "tags": ["Linux", "Bash", "Nginx", "Monitoring"],
+      "period": "Agosto 2018 - Febrero 2022",
+      "role": "Release Engineer",
+      "company": "PwC / TCS Uruguay",
+      "description": "Soporte de despliegues, pipelines CI/CD e infraestructura cloud para entornos productivos.",
+      "tags": ["Kubernetes", "Jenkins", "GCP", "CI/CD", "Deployments"],
       "highlights": [
-        "Administración de más de 100 servidores Linux.",
-        "Implementación de monitoreo centralizado.",
-        "Mejora de la disponibilidad de servicios críticos."
+        "Soporte de despliegues sobre Kubernetes y pipelines CI/CD.",
+        "Gestión de infraestructura en GCP y automatización de despliegues.",
+        "Soporte y mantenimiento de pipelines Jenkins para procesos de release."
       ]
     },
     {
-      "period": "2020 - 2021",
-      "role": "Systems Administrator",
-      "company": "Digital Services",
-      "description": "Administración de servidores Linux y soporte a plataformas de producción.",
-      "tags": ["Linux", "Bash", "Nginx", "Monitoring"],
+      "period": "Agosto 2016 - Agosto 2018",
+      "role": "Senior DevOps Engineer / Analista de Servicio Técnico",
+      "company": "Zippyttech Tecnología e Innovación",
+      "description": "Primer rol profesional como ingeniero, combinando soporte técnico, administración cloud en AWS, contenedores y prácticas de CI/CD.",
+      "tags": ["AWS", "Docker", "GitLab", "CI/CD", "Linux", "Soporte"],
       "highlights": [
-        "Administración de más de 100 servidores Linux.",
-        "Implementación de monitoreo centralizado.",
-        "Mejora de la disponibilidad de servicios críticos."
+        "Administración de la cloud de Zippyttech sobre Amazon Web Services.",
+        "Participación en prácticas de integración y despliegue continuo para aplicaciones internas.",
+        "Uso de Docker para contenerización de aplicaciones y ambientes de trabajo.",
+        "Administración de servidor de control de versiones GitLab.",
+        "Soporte técnico a oficinas y apoyo en administración de servidores."
+      ]
+    },
+    {
+      "period": "Febrero 2013 - Agosto 2016",
+      "role": "Soporte Técnico / Asesor Académico",
+      "company": "Universidad Nacional Experimental del Táchira",
+      "description": "Experiencia inicial en soporte técnico universitario, mantenimiento de laboratorios, instalación de software y acompañamiento académico.",
+      "tags": ["Soporte Técnico", "Linux", "Software", "Hardware", "Mentoría"],
+      "highlights": [
+        "Instalación de software, reparación, clonación y mantenimiento de equipos en laboratorios y departamentos universitarios.",
+        "Soporte técnico en el Centro de Estudios en Teleinformática y el Laboratorio de Computación Dr. Valerio Wong.",
+        "Asesoría académica a estudiantes en materias como Matemática Discreta, Inglés y Fundamentos de Lógica Digital."
       ]
     }
   ]
