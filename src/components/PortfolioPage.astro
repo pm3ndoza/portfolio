@@ -1,0 +1,685 @@
+---
+import "../styles/global.css";
+import type { Locale, UiCopy } from "../data/i18n/ui";
+import.meta.env.BASE_URL;
+
+type PortfolioProps = {
+  lang: Locale;
+  ui: UiCopy;
+  profile: any;
+  skills: any[];
+  projects: any[];
+  experiences: any[];
+  hobbiesData: any;
+  certifications: any[];
+};
+
+const {
+  lang,
+  ui,
+  profile,
+  skills,
+  projects,
+  experiences,
+  hobbiesData,
+  certifications,
+} = Astro.props as PortfolioProps;
+const hobbies = hobbiesData.hobbies;
+const shuffleHobbies = <T,>(items: T[]) => {
+  const midpoint = Math.ceil(items.length / 2);
+  const left = items.slice(0, midpoint);
+  const right = items.slice(midpoint);
+
+  return left.flatMap((item, index) => {
+    const pair = right[right.length - 1 - index];
+    return pair ? [item, pair] : [item];
+  });
+};
+const shuffledHobbies = shuffleHobbies(
+  hobbies.map((hobby, index) => ({ ...hobby, originalIndex: index })),
+);
+const hobbiesIntro = hobbiesData.intro;
+const hobbiesSignal = hobbiesData.signal;
+const hobbiesStamps = hobbiesData.stamps;
+const getInitials = (value: string) =>
+  value
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+const withBase = (path: string) => {
+  const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+  return `${base}${path.replace(/^\/+/, "")}`;
+};
+const langUrls = {
+  es: withBase("/"),
+  en: withBase("/en/"),
+};
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{profile.name} | {ui.documentTitle}</title>
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      document.documentElement.dataset.theme =
+        savedTheme || (prefersDark ? "dark" : "light");
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="terminal-path">
+        <span class="path-user"><b>{ui.pathUser}</b></span>
+        <span class="path-dir"><b>{ui.pathDir}</b></span>
+        <span class="path-branch"><b>{ui.branch}</b></span>
+      </div>
+      <nav class="desktop-nav">
+        <a class="active" href="#home">{ui.nav.home}</a>
+        <a href="#skills">{ui.nav.skills}</a>
+        <a href="#projects">{ui.nav.projects}</a>
+        <a href="#experience">{ui.nav.experience}</a>
+        <a href="#certifications">{ui.nav.certifications}</a>
+        <a href="#about">{ui.nav.about}</a>
+        <a href="#hobbies">{ui.nav.hobbies}</a>
+        <a href="#contact">{ui.nav.contact}</a>
+      </nav>
+      <details class="nav-menu mobile-nav">
+        <summary>&gt; menu</summary>
+        <nav>
+          <a class="active" href="#home">{ui.nav.home}</a>
+          <a href="#skills">{ui.nav.skills}</a>
+          <a href="#projects">{ui.nav.projects}</a>
+          <a href="#experience">{ui.nav.experience}</a>
+          <a href="#certifications">{ui.nav.certifications}</a>
+          <a href="#about">{ui.nav.about}</a>
+          <a href="#hobbies">{ui.nav.hobbies}</a>
+          <a href="#contact">{ui.nav.contact}</a>
+        </nav>
+      </details>
+      <nav class="language-switch" aria-label={ui.language.label}>
+        <a
+          class:list={[lang === "es" && "active"]}
+          href={langUrls.es}
+          aria-label={ui.language.es}
+        >
+          <span aria-hidden="true">🇪🇸</span>
+        </a>
+        <a
+          class:list={[lang === "en" && "active"]}
+          href={langUrls.en}
+          aria-label={ui.language.en}
+        >
+          <span aria-hidden="true">🇺🇸</span>
+        </a>
+      </nav>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label={ui.theme.label}
+        data-theme-toggle
+      >
+        <span aria-hidden="true">◐</span>
+        {ui.theme.label}
+      </button>
+    </header>
+    <main>
+      <section id="home" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.nav.home}</p>
+        </div>
+        <p class="terminal-section-command">&gt; {ui.home.command}</p>
+        <div class="terminal-section-body">
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <h1>{profile.name}</h1>
+              <p class="role">{profile.role}</p>
+              <p>{profile.hero}</p>
+
+              <div class="hero-meta">
+                <span>{profile.contact.location}</span>
+                <span>{profile.availability}</span>
+              </div>
+
+              <div class="hero-actions">
+                <a class="button-primary" href="#projects">{ui.home.work}</a>
+                <a
+                  class="button-secondary"
+                  href={withBase(profile.cvUrl)}
+                  download
+                >
+                  {ui.home.cv}
+                </a>
+              </div>
+            </div>
+
+            <aside class="hero-terminal">
+              <div class="terminal-window-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>{ui.home.terminalTitle}</p>
+              </div>
+
+              <div class="terminal-info">
+                <p><strong>{ui.home.labels.os}:</strong> Ubuntu</p>
+                <p><strong>{ui.home.labels.shell}:</strong> zsh</p>
+                <p><strong>{ui.home.labels.editor}:</strong> vim</p>
+                <p>
+                  <strong>{ui.home.labels.user}:</strong> pmendoza@githubpages
+                </p>
+                <p><strong>{ui.home.labels.role}:</strong> {profile.role}</p>
+                <p>
+                  <strong>{ui.home.labels.location}:</strong>
+                  {profile.contact.location}
+                </p>
+                <p>
+                  <strong>{ui.home.labels.status}:</strong>
+                  {profile.availability}
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.nav.skills}</p>
+          <p class="section-status">
+            &gt; {ui.skills.status(skills.length)}
+          </p>
+        </div>
+        <p class="terminal-section-command">&gt; {ui.skills.command}</p>
+        <div class="terminal-section-body">
+          <div class="cards-grid skills-grid">
+            {
+              skills.map((skill) => (
+                <article>
+                  <div class="skill-heading">
+                    <img
+                      class="skill-icon"
+                      src={withBase(skill.icon)}
+                      alt=""
+                      loading="lazy"
+                    />
+                    <h2>{skill.title}</h2>
+                  </div>
+                  <ul>
+                    {skill.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                  <p class="card-command">&gt; {skill.command}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.nav.projects}</p>
+          <p class="section-count">{ui.projects.count(projects.length)}</p>
+        </div>
+
+        <p class="terminal-section-command">&gt; {ui.projects.command}</p>
+        <div class="terminal-section-body">
+          <div class="cards-grid projects-grid">
+            {
+              projects.map((project) => (
+                <article class="project-card">
+                  <div class="project-window-bar">
+                    <span />
+                    <span />
+                    <span />
+
+                    <div class="project-window-tags">
+                      {project.tags.map((tag) => (
+                        <span>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div class="project-content">
+                    <h2>{project.title}</h2>
+                    <p>{project.description}</p>
+
+                    <img
+                      class="project-preview"
+                      src={withBase(project.image)}
+                      alt={ui.projects.previewAlt(project.title)}
+                      loading="lazy"
+                    />
+
+                    <a
+                      class="card-command"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      &gt; {project.command}
+                    </a>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+      <section id="experience" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.experience.title}</p>
+          <p class="section-count">{ui.experience.count(experiences.length)}</p>
+        </div>
+        <p class="terminal-section-command">&gt; {ui.experience.command}</p>
+
+        <div class="experience-log">
+          {
+            experiences.map((experience) => (
+              <article class="log-item">
+                <div class="log-dot" aria-hidden="true" />
+                <details class="experience-detail">
+                  <summary class="experience-summary">
+                    <span class="period">{experience.period}</span>
+
+                    <span class="log-role">
+                      <span class="role-title">{experience.role}</span>
+                      <span class="company">{experience.company}</span>
+                    </span>
+
+                    <span class="experience-description">
+                      {experience.description}
+                    </span>
+
+                    <span class="tags">
+                      {experience.tags.map((item) => (
+                        <span>{item}</span>
+                      ))}
+                    </span>
+                  </summary>
+
+                  <ul class="highlights-list">
+                    {experience.highlights.map((item) => (
+                      <li>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="certifications" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.certifications.title}</p>
+          <p class="section-count">
+            {ui.certifications.count(certifications.length)}
+          </p>
+        </div>
+
+        <p class="terminal-section-command">&gt; {ui.certifications.command}</p>
+
+        <div class="terminal-section-body">
+          <div class="cards-grid certs-grid">
+            {
+              certifications.map((certification) => (
+                <article class="cert-card">
+                  <div class="cert-card-top">
+                    <div class="cert-badge" aria-hidden="true">
+                      {certification.badge ? (
+                        <img
+                          src={withBase(certification.badge)}
+                          alt=""
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span>{getInitials(certification.issuer)}</span>
+                      )}
+                    </div>
+
+                    <span
+                      class:list={[
+                        "cert-status",
+                        certification.status?.toLowerCase().includes("expir")
+                          ? "is-expired"
+                          : "is-verified",
+                      ]}
+                    >
+                      {certification.status?.toLowerCase().includes("expir")
+                        ? ui.certifications.expired
+                        : ui.certifications.verified}
+                    </span>
+                  </div>
+
+                  <div class="cert-content">
+                    <p class="cert-issuer">{certification.issuer}</p>
+                    <h2>{certification.name}</h2>
+                    <p class="cert-year">
+                      {ui.certifications.issued}: {certification.year}
+                    </p>
+                  </div>
+
+                  <details class="cert-detail">
+                    <summary class="card-command">
+                      &gt; {certification.command} →
+                    </summary>
+
+                    <ul class="cert-verify-list">
+                      <li>
+                        <span>
+                          {ui.certifications.issuer}: {certification.issuer}
+                        </span>
+                      </li>
+                      <li>
+                        <span>
+                          {ui.certifications.status}: {certification.status}
+                        </span>
+                      </li>
+                      <li>
+                        <a
+                          href={certification.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {ui.certifications.verificationUrl}
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.about.title}</p>
+        </div>
+
+        <p class="terminal-section-command">&gt; {ui.about.command}</p>
+
+        <div class="terminal-section-body">
+          <div class="about-layout">
+            <aside class="about-profile-card">
+              <div class="about-avatar" aria-hidden="true">
+                {
+                  profile.photo ? (
+                    <img src={withBase(profile.photo)} alt="" loading="lazy" />
+                  ) : (
+                    <span>{getInitials(profile.name)}</span>
+                  )
+                }
+              </div>
+
+              <div class="about-config">
+                <p>{ui.about.profile}:</p>
+                <p>&nbsp;&nbsp;{ui.about.name}: "{profile.name}"</p>
+                <p>&nbsp;&nbsp;{ui.about.role}: "{profile.role}"</p>
+                <p>
+                  &nbsp;&nbsp;{ui.about.mode}: "{profile.profileConfig.mode}"
+                </p>
+                <p>
+                  &nbsp;&nbsp;{ui.about.focus}: "{profile.profileConfig.focus}"
+                </p>
+                <p>
+                  &nbsp;&nbsp;{ui.about.location}: "{
+                    profile.profileConfig.location
+                  }"
+                </p>
+                <p>&nbsp;&nbsp;{ui.about.prefers}:</p>
+                {
+                  profile.profileConfig.prefers.map((item) => (
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;- {item}</p>
+                  ))
+                }
+              </div>
+            </aside>
+
+            <div class="about-copy">
+              <h2>{profile.aboutIntro}</h2>
+              {profile.about.map((item) => <p>{item}</p>)}
+
+              <div class="about-values">
+                {profile.values.map((item) => <span>{item}</span>)}
+              </div>
+
+              <p class="card-command">&gt; echo "{profile.summary}"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="hobbies" class="terminal-section crew-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.hobbies.title}</p>
+          <p class="section-count">{ui.hobbies.count}</p>
+        </div>
+
+        <p class="terminal-section-command">&gt; {ui.hobbies.command}</p>
+
+        <div class="terminal-section-body">
+          <div class="crew-log-layout">
+            <aside class="crew-map" aria-label={ui.hobbies.mapLabel}>
+              <div class="compass">
+                <span>N</span>
+                <span>E</span>
+                <span>S</span>
+                <span>W</span>
+              </div>
+              <div class="route-line" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p>{hobbiesIntro}</p>
+              <p class="crew-signal">&gt; {hobbiesSignal}</p>
+              <div class="crew-stamps" aria-label={ui.hobbies.stampsLabel}>
+                {hobbiesStamps.map((stamp) => <span>{stamp}</span>)}
+              </div>
+            </aside>
+
+            <div class="crew-manifest">
+              {
+                shuffledHobbies.map((hobby) => (
+                  <article class="hobby-card">
+                    <div class="hobby-heading">
+                      <span class="hobby-index">
+                        {String(hobby.originalIndex + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <p class="hobby-tag">{hobby.tag}</p>
+                        <h2>{hobby.title}</h2>
+                      </div>
+                    </div>
+
+                    <p>{hobby.description}</p>
+
+                    <ul class="hobby-items">
+                      {hobby.items.map((item) => (
+                        <li>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="terminal-section">
+        <div class="terminal-section-bar">
+          <p class="eyebrow">&gt; {ui.contact.title}</p>
+          <p class="section-count">{ui.contact.count}</p>
+        </div>
+        <p class="terminal-section-command">&gt; {ui.contact.command}</p>
+
+        <div class="terminal-section-body">
+          <div class="contact-layout">
+            <aside class="availability-card">
+              <h2>&gt; {ui.contact.availabilityTitle}</h2>
+
+              <div class="available-now">
+                <span class="status-dot"></span>
+                <div>
+                  <strong>{ui.contact.availableNow}</strong>
+                  <p>{ui.contact.stack}</p>
+                </div>
+              </div>
+
+              <div class="availability-list">
+                <p>
+                  <span class="contact-icon">◷</span>
+                  <span>
+                    <strong>{ui.contact.localTime}</strong>
+                    {profile.contact.localTime}
+                  </span>
+                </p>
+                <p>
+                  <span class="contact-icon">↯</span>
+                  <span>
+                    <strong>{ui.contact.responseTime}</strong>
+                    {profile.contact.responseTime}
+                  </span>
+                </p>
+                <p>
+                  <span class="contact-icon">◎</span>
+                  <span>
+                    <strong>{ui.contact.mode}</strong>
+                    {ui.contact.modeValue}
+                  </span>
+                </p>
+              </div>
+            </aside>
+
+            <aside class="channels-card">
+              <h2>&gt; {ui.contact.channelsTitle}</h2>
+
+              <a
+                href={profile.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M6.9 9.4v8.9H4V9.4h2.9ZM5.5 5.1a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4Zm6.5 4.3.1 1.2c.6-.9 1.6-1.4 2.9-1.4 2.1 0 3.4 1.4 3.4 4.3v4.8h-2.9v-4.5c0-1.3-.5-2-1.6-2s-1.7.7-1.7 2v4.5H9.3V9.4H12Z"
+                    ></path>
+                  </svg>
+                </span>
+                <span>
+                  <strong>LinkedIn</strong>
+                  /pm3ndoza
+                </span>
+                <em>&gt; {ui.contact.openProfile}</em>
+              </a>
+
+              <a
+                href={profile.contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 3.5a8.7 8.7 0 0 0-2.8 17c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-.9-.9-1.1-.9-1.1-.7-.5.1-.5.1-.5.8.1 1.3.9 1.3.9.7 1.3 2 1 2.4.8.1-.5.3-.9.5-1.1-1.8-.2-3.7-.9-3.7-4 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.3.8.7-.2 1.4-.3 2.1-.3.7 0 1.4.1 2.1.3 1.6-1 2.3-.8 2.3-.8.5 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.2 0 3.1-1.9 3.8-3.7 4 .3.2.5.7.5 1.4v2.1c0 .2.2.5.6.4A8.7 8.7 0 0 0 12 3.5Z"
+                    ></path>
+                  </svg>
+                </span>
+                <span>
+                  <strong>GitHub</strong>
+                  /pm3ndoza
+                </span>
+                <em>&gt; {ui.contact.viewRepos}</em>
+              </a>
+
+              <a href="mailto:pmendozauy@gmail.com">
+                <span class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M5.5 6.5h13A2.5 2.5 0 0 1 21 9v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 15.5V9a2.5 2.5 0 0 1 2.5-2.5Zm.2 2 6.3 4.4 6.3-4.4H5.7Zm-.2 1.9v5.1c0 .3.2.5.5.5h12c.3 0 .5-.2.5-.5v-5.1l-5.9 4.1a1.1 1.1 0 0 1-1.2 0L5.5 10.4Z"
+                    ></path>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Email</strong>
+                  pmendozauy@gmail.com
+                </span>
+                <em>&gt; {ui.contact.emailAction}</em>
+              </a>
+
+              <div class="contact-status">
+                <span>{ui.contact.status}: {profile.contact.status}</span>
+                <span>{ui.contact.updated}: {ui.contact.updatedValue}</span>
+                <span>{ui.contact.channel}: {ui.contact.channelValue}</span>
+                <span
+                  >{ui.contact.modeStatus}: {ui.contact.modeStatusValue}</span
+                >
+              </div>
+            </aside>
+          </div>
+        </div>
+        <footer class="footer-bar">
+          <div class="terminal-path">
+            <span class="path-user"><b>{ui.pathUser}</b></span>
+            <span class="path-dir"><b>{ui.pathDir}</b></span>
+            <span class="path-branch"><b>{ui.endBranch}</b></span>
+          </div>
+
+          <p>{ui.footer}</p>
+        </footer>
+      </section>
+    </main>
+    <script
+      define:vars={{
+        themeLabels: {
+          toLight: ui.theme.toLight,
+          toDark: ui.theme.toDark,
+        },
+      }}
+    >
+      const themeToggle = document.querySelector("[data-theme-toggle]");
+
+      if (themeToggle instanceof HTMLButtonElement) {
+        const syncThemeLabel = () => {
+          const theme = document.documentElement.dataset.theme || "dark";
+          themeToggle.setAttribute(
+            "aria-label",
+            theme === "dark" ? themeLabels.toLight : themeLabels.toDark,
+          );
+        };
+
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = document.documentElement.dataset.theme || "dark";
+          const nextTheme = currentTheme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = nextTheme;
+          localStorage.setItem("theme", nextTheme);
+          syncThemeLabel();
+        });
+
+        syncThemeLabel();
+      }
+    </script>
+  </body>
+</html>

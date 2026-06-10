@@ -1,0 +1,23 @@
+---
+import PortfolioPage from "../../components/PortfolioPage.astro";
+import {
+  certifications,
+  experience,
+  hobbiesData,
+  profile,
+  projects,
+  skills,
+} from "../../data/i18n/en";
+import { ui } from "../../data/i18n/ui";
+---
+
+<PortfolioPage
+  lang="en"
+  ui={ui.en}
+  profile={profile}
+  skills={skills}
+  projects={projects}
+  experiences={experience}
+  hobbiesData={hobbiesData}
+  certifications={certifications}
+/>
