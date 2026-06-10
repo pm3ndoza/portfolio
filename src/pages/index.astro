@@ -24,7 +24,7 @@ const shuffleHobbies = <T,>(items: T[]) => {
   });
 };
 const shuffledHobbies = shuffleHobbies(
-  hobbies.map((hobby, index) => ({ ...hobby, originalIndex: index }))
+  hobbies.map((hobby, index) => ({ ...hobby, originalIndex: index })),
 );
 const hobbiesIntro = hobbiesData.intro;
 const hobbiesSignal = hobbiesData.signal;
@@ -54,6 +54,14 @@ const withBase = (path: string) => {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{profile.name} | Portfolio</title>
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      document.documentElement.dataset.theme =
+        savedTheme || (prefersDark ? "dark" : "light");
+    </script>
   </head>
   <body>
     <header class="topbar">
@@ -85,6 +93,15 @@ const withBase = (path: string) => {
           <a href="#contact">08. contacto</a>
         </nav>
       </details>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Cambiar tema"
+        data-theme-toggle
+      >
+        <span aria-hidden="true">◐</span>
+        tema
+      </button>
     </header>
     <main>
       <section id="home" class="terminal-section">
@@ -303,11 +320,9 @@ const withBase = (path: string) => {
                           : "is-verified",
                       ]}
                     >
-                      {
-                        certification.status?.toLowerCase().includes("expir")
-                          ? "expirada"
-                          : "verificada"
-                      }
+                      {certification.status?.toLowerCase().includes("expir")
+                        ? "expirada"
+                        : "verificada"}
                     </span>
                   </div>
 
@@ -358,11 +373,13 @@ const withBase = (path: string) => {
           <div class="about-layout">
             <aside class="about-profile-card">
               <div class="about-avatar" aria-hidden="true">
-                {profile.photo ? (
-                  <img src={withBase(profile.photo)} alt="" loading="lazy" />
-                ) : (
-                  <span>{getInitials(profile.name)}</span>
-                )}
+                {
+                  profile.photo ? (
+                    <img src={withBase(profile.photo)} alt="" loading="lazy" />
+                  ) : (
+                    <span>{getInitials(profile.name)}</span>
+                  )
+                }
               </div>
 
               <div class="about-config">
@@ -373,9 +390,11 @@ const withBase = (path: string) => {
                 <p>&nbsp;&nbsp;focus: "{profile.profileConfig.focus}"</p>
                 <p>&nbsp;&nbsp;location: "{profile.profileConfig.location}"</p>
                 <p>&nbsp;&nbsp;prefers:</p>
-                {profile.profileConfig.prefers.map((item) => (
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;- {item}</p>
-                ))}
+                {
+                  profile.profileConfig.prefers.map((item) => (
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;- {item}</p>
+                  ))
+                }
               </div>
             </aside>
 
@@ -384,9 +403,7 @@ const withBase = (path: string) => {
               {profile.about.map((item) => <p>{item}</p>)}
 
               <div class="about-values">
-                {profile.values.map((item) => (
-                  <span>{item}</span>
-                ))}
+                {profile.values.map((item) => <span>{item}</span>)}
               </div>
 
               <p class="card-command">&gt; echo "{profile.summary}"</p>
@@ -421,9 +438,7 @@ const withBase = (path: string) => {
               <p>{hobbiesIntro}</p>
               <p class="crew-signal">&gt; {hobbiesSignal}</p>
               <div class="crew-stamps" aria-label="Sellos personales">
-                {hobbiesStamps.map((stamp) => (
-                  <span>{stamp}</span>
-                ))}
+                {hobbiesStamps.map((stamp) => <span>{stamp}</span>)}
               </div>
             </aside>
 
@@ -513,7 +528,9 @@ const withBase = (path: string) => {
               >
                 <span class="channel-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
-                    <path d="M6.9 9.4v8.9H4V9.4h2.9ZM5.5 5.1a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4Zm6.5 4.3.1 1.2c.6-.9 1.6-1.4 2.9-1.4 2.1 0 3.4 1.4 3.4 4.3v4.8h-2.9v-4.5c0-1.3-.5-2-1.6-2s-1.7.7-1.7 2v4.5H9.3V9.4H12Z" />
+                    <path
+                      d="M6.9 9.4v8.9H4V9.4h2.9ZM5.5 5.1a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4Zm6.5 4.3.1 1.2c.6-.9 1.6-1.4 2.9-1.4 2.1 0 3.4 1.4 3.4 4.3v4.8h-2.9v-4.5c0-1.3-.5-2-1.6-2s-1.7.7-1.7 2v4.5H9.3V9.4H12Z"
+                    ></path>
                   </svg>
                 </span>
                 <span>
@@ -530,7 +547,9 @@ const withBase = (path: string) => {
               >
                 <span class="channel-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
-                    <path d="M12 3.5a8.7 8.7 0 0 0-2.8 17c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-.9-.9-1.1-.9-1.1-.7-.5.1-.5.1-.5.8.1 1.3.9 1.3.9.7 1.3 2 1 2.4.8.1-.5.3-.9.5-1.1-1.8-.2-3.7-.9-3.7-4 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.3.8.7-.2 1.4-.3 2.1-.3.7 0 1.4.1 2.1.3 1.6-1 2.3-.8 2.3-.8.5 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.2 0 3.1-1.9 3.8-3.7 4 .3.2.5.7.5 1.4v2.1c0 .2.2.5.6.4A8.7 8.7 0 0 0 12 3.5Z" />
+                    <path
+                      d="M12 3.5a8.7 8.7 0 0 0-2.8 17c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-.9-.9-1.1-.9-1.1-.7-.5.1-.5.1-.5.8.1 1.3.9 1.3.9.7 1.3 2 1 2.4.8.1-.5.3-.9.5-1.1-1.8-.2-3.7-.9-3.7-4 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.3.8.7-.2 1.4-.3 2.1-.3.7 0 1.4.1 2.1.3 1.6-1 2.3-.8 2.3-.8.5 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.2 0 3.1-1.9 3.8-3.7 4 .3.2.5.7.5 1.4v2.1c0 .2.2.5.6.4A8.7 8.7 0 0 0 12 3.5Z"
+                    ></path>
                   </svg>
                 </span>
                 <span>
@@ -540,108 +559,62 @@ const withBase = (path: string) => {
                 <em>&gt; ver repos</em>
               </a>
 
-              <a
-                href={profile.contact.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="mailto:pmendozauy@gmail.com">
                 <span class="channel-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
-                    <path d="M8 4.5h8A3.5 3.5 0 0 1 19.5 8v8a3.5 3.5 0 0 1-3.5 3.5H8A3.5 3.5 0 0 1 4.5 16V8A3.5 3.5 0 0 1 8 4.5Zm0 2A1.5 1.5 0 0 0 6.5 8v8A1.5 1.5 0 0 0 8 17.5h8a1.5 1.5 0 0 0 1.5-1.5V8A1.5 1.5 0 0 0 16 6.5H8Zm4 2.1a3.4 3.4 0 1 1 0 6.8 3.4 3.4 0 0 1 0-6.8Zm0 2a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8Zm4-2.4a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z" />
+                    <path
+                      d="M5.5 6.5h13A2.5 2.5 0 0 1 21 9v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 15.5V9a2.5 2.5 0 0 1 2.5-2.5Zm.2 2 6.3 4.4 6.3-4.4H5.7Zm-.2 1.9v5.1c0 .3.2.5.5.5h12c.3 0 .5-.2.5-.5v-5.1l-5.9 4.1a1.1 1.1 0 0 1-1.2 0L5.5 10.4Z"
+                    ></path>
                   </svg>
                 </span>
                 <span>
-                  <strong>Instagram</strong>
-                  personal log
+                  <strong>Email</strong>
+                  pmendozauy@gmail.com
                 </span>
-                <em>&gt; abrir feed</em>
+                <em>&gt; contactame por mail</em>
               </a>
+
+              <div class="contact-status">
+                <span>estado: {profile.contact.status}</span>
+                <span>actualizado: contacto directo</span>
+                <span>canal: mailto/email</span>
+                <span>modo: async</span>
+              </div>
             </aside>
-
-            <form class="contact-form">
-              <div class="form-heading">
-                <h2>&gt; mensaje_rapido</h2>
-                <span>borrador</span>
-              </div>
-
-              <div class="form-fields">
-                <label>
-                  name:
-                  <input type="text" name="name" placeholder="Tu nombre" />
-                </label>
-
-                <label>
-                  email:
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="tu@email.com"
-                  />
-                </label>
-
-                <label>
-                  mensaje:
-                  <textarea
-                    name="message"
-                    placeholder="Contame en qué estás pensando..."
-                  ></textarea>
-                </label>
-              </div>
-
-              <pre class="json-preview" id="contact-json-preview">{`{
-  "ruta": "portfolio/contact",
-  "para": "${profile.contact.email}",
-  "de": "",
-  "respuesta_a": "",
-  "mensaje": "",
-  "estado": "borrador",
-  "respuesta_estimada": "${profile.contact.responseTime}"
-}`}</pre>
-
-              <button type="button">&gt; enviar mensaje</button>
-            </form>
-          </div>
-
-          <div class="contact-status">
-            <span>estado: {profile.contact.status}</span>
-            <span>actualizado: borrador en vivo</span>
-            <span>canal: portfolio/contact</span>
-            <span>modo: async</span>
           </div>
         </div>
+        <footer class="footer-bar">
+          <div class="terminal-path">
+            <span class="path-user"><b>user@devbox</b></span>
+            <span class="path-dir"><b>~/portfolio</b></span>
+            <span class="path-branch"><b>fin</b></span>
+          </div>
+
+          <p>Fin del portfolio. Gracias por visitar.</p>
+        </footer>
       </section>
     </main>
-    <footer class="footer-bar">
-      <div class="terminal-path">
-        <span class="path-user"><b>user@devbox</b></span>
-        <span class="path-dir"><b>~/portfolio</b></span>
-        <span class="path-branch"><b>fin</b></span>
-      </div>
-
-      <p>Fin del portfolio. Gracias por visitar.</p>
-    </footer>
     <script>
-      const contactForm = document.querySelector(".contact-form");
-      const contactPreview = document.querySelector("#contact-json-preview");
+      const themeToggle = document.querySelector("[data-theme-toggle]");
 
-      if (contactForm instanceof HTMLFormElement && contactPreview) {
-        const updatePreview = () => {
-          const formData = new FormData(contactForm);
-          const payload = {
-            ruta: "portfolio/contact",
-            para: "{profile.contact.email}",
-            de: String(formData.get("name") || ""),
-            respuesta_a: String(formData.get("email") || ""),
-            mensaje: String(formData.get("message") || ""),
-            estado: "borrador",
-            respuesta_estimada: "{profile.contact.responseTime}",
-          };
-
-          contactPreview.textContent = JSON.stringify(payload, null, 2);
+      if (themeToggle instanceof HTMLButtonElement) {
+        const syncThemeLabel = () => {
+          const theme = document.documentElement.dataset.theme || "dark";
+          themeToggle.setAttribute(
+            "aria-label",
+            theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro",
+          );
         };
 
-        contactForm.addEventListener("input", updatePreview);
-        updatePreview();
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = document.documentElement.dataset.theme || "dark";
+          const nextTheme = currentTheme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = nextTheme;
+          localStorage.setItem("theme", nextTheme);
+          syncThemeLabel();
+        });
+
+        syncThemeLabel();
       }
     </script>
   </body>
