@@ -1,51 +1,19 @@
 {
   "projects": [
     {
-      "title": "Proyecto 1",
-      "description": "Descripción breve del proyecto, qué problema resuelve y qué tecnologías usa.",
-      "url": "https://github.com/pm3ndoza/k8co",
-      "command": "ver código →",
-      "image": "/assets/projects/project-placeholder-fullbleed.png",
-      "tags": ["Demo", "Portfolio"]
-    },
-    {
-      "title": "Proyecto 2",
-      "description": "Descripción breve del proyecto, qué aprendiste y qué parte técnica querés destacar.",
-      "url": "https://github.com/pm3ndoza/k8co",
-      "command": "ver código →",
-      "image": "/assets/projects/project-placeholder-fullbleed.png",
-      "tags": ["Learning", "Automation"]
-    },
-    {
-      "title": "Proyecto 3",
-      "description": "Descripción breve del proyecto, idealmente conectada con DevOps, cloud o Python.",
-      "url": "https://github.com/pm3ndoza/k8co",
-      "command": "ver código →",
-      "image": "/assets/projects/project-placeholder-fullbleed.png",
-      "tags": ["DevOps", "Python"]
-    },
-    {
       "title": "k8co",
-      "description": "Tool para cambiar de contexto de Kubernetes rápidamente, con soporte de autocompletado.",
+      "description": "k8co es una herramienta CLI para Kubernetes que permite cambiar rápidamente el contexto activo usando búsqueda aproximada (fuzzy matching), sugerencias inteligentes y selección interactiva. Facilita el trabajo con múltiples clusters sin necesidad de recordar nombres completos de contextos.",
       "url": "https://github.com/pm3ndoza/k8co",
       "command": "ver código →",
-      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "image": "/assets/projects/k8co.png",
       "tags": ["Bash", "Kubernetes", "CLI"]
     },
     {
-      "title": "Browser Docker",
-      "description": "Dockerfile para ejecutar un navegador dentro de un contenedor con soporte para aceleración por hardware.",
-      "url": "https://github.com/pm3ndoza/k8co",
+      "title": "Portfolio",
+      "description": "Sitio web personal y portfolio profesional desarrollado con Astro y desplegado en GitHub Pages. Presenta mi experiencia como DevOps Engineer, proyectos destacados, habilidades en Kubernetes, Cloud, Linux, CI/CD, observabilidad y automatización, junto con información profesional y medios de contacto.",
+      "url": "https://github.com/pm3ndoza/portfolio",
       "command": "ver código →",
-      "image": "/assets/projects/project-placeholder-fullbleed.png",
-      "tags": ["Docker", "Linux", "Browser"]
-    },
-    {
-      "title": "Terraform",
-      "description": "Proyecto Terraform para desplegar una infraestructura básica en AWS con VPC, subnets, EC2 y RDS.",
-      "url": "https://github.com/pm3ndoza/k8co",
-      "command": "ver código →",
-      "image": "/assets/projects/project-placeholder-fullbleed.png",
+      "image": "/assets/projects/portfolio.png",
       "tags": ["Terraform", "AWS", "IaC"]
     }
   ]
