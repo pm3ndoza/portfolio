@@ -438,6 +438,43 @@ section + section {
   box-shadow: 0 0 10px rgba(0, 255, 136, 0.42);
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 34%, var(--border));
+  border-radius: 999px;
+  background: rgba(3, 16, 20, 0.56);
+}
+
+.language-switch a {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 1.65rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  line-height: 1;
+  opacity: 0.62;
+  transition:
+    border-color 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.language-switch a:hover,
+.language-switch a.active {
+  border-color: color-mix(in srgb, var(--accent-cyan) 58%, var(--border));
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.language-switch span {
+  font-size: 1.05rem;
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -1672,6 +1709,7 @@ article h2 {
 
 :root[data-theme="light"] .terminal-path span b,
 :root[data-theme="light"] .theme-toggle,
+:root[data-theme="light"] .language-switch,
 :root[data-theme="light"] .channel-icon,
 :root[data-theme="light"] .contact-icon,
 :root[data-theme="light"] .project-preview,
@@ -1691,7 +1729,11 @@ article h2 {
 
 :root[data-theme="light"] .crew-section {
   background:
-    radial-gradient(circle at 18% 16%, rgba(246, 196, 83, 0.2), transparent 34%),
+    radial-gradient(
+      circle at 18% 16%,
+      rgba(246, 196, 83, 0.2),
+      transparent 34%
+    ),
     linear-gradient(rgba(9, 31, 28, 0.76), rgba(5, 22, 20, 0.84)),
     url("../assets/backgrounds/crew-log-map.png") center / cover no-repeat,
     repeating-linear-gradient(
