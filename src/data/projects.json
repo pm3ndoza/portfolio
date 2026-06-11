@@ -6,7 +6,7 @@
       "url": "https://github.com/pm3ndoza/k8co",
       "command": "ver código →",
       "image": "/assets/projects/k8co.png",
-      "tags": ["Bash", "Kubernetes", "CLI"]
+      "tags": ["Python", "Kubernetes", "CLI"]
     },
     {
       "title": "Portfolio",
@@ -14,7 +14,7 @@
       "url": "https://github.com/pm3ndoza/portfolio",
       "command": "ver código →",
       "image": "/assets/projects/portfolio.png",
-      "tags": ["Terraform", "AWS", "IaC"]
+      "tags": ["Astro", "CSS", "GitHub Pages"]
     }
   ]
 }

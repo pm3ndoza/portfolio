@@ -8,7 +8,7 @@ export const profile = {
   summary: "always building, always learning",
   aboutIntro: "I'm Pedro Mendoza.",
   about: [
-    "Hi, I'm Pedro Mendoza. I was born in Venezuela, graduated as an Informatics Engineer from Universidad Nacional Experimental del Tachira, and currently live in Uruguay.",
+    "Hi, I'm Pedro Mendoza. I was born in Venezuela, earned a degree in Informatics Engineering from Universidad Nacional Experimental del Táchira, and currently live in Uruguay.",
     "Throughout my career, technology has become the perfect mix of curiosity, continuous learning, and problem solving. I enjoy understanding how things work behind the scenes, building useful solutions, and simplifying complex processes through automation.",
     "Beyond production environments and infrastructure, I enjoy exploring new tools, constantly learning, and sharing knowledge with other professionals. I believe the best solutions come from combining technical excellence, collaboration, and genuine curiosity to improve every day.",
   ],
@@ -25,7 +25,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/pm3ndoza/",
     localTime: "America/Montevideo",
     responseTime: "24-48h",
-    status: "accepting conversations",
+    status: "open to conversations",
     location: "Uruguay",
     city: "Montevideo",
   },
@@ -72,7 +72,7 @@ export const projects = [
     url: "https://github.com/pm3ndoza/k8co",
     command: "view code →",
     image: "/assets/projects/k8co.png",
-    tags: ["Bash", "Kubernetes", "CLI"],
+    tags: ["Python", "Kubernetes", "CLI"],
   },
   {
     title: "Portfolio",
@@ -181,7 +181,7 @@ export const experience = [
   {
     period: "August 2016 - August 2018",
     role: "Senior DevOps Engineer / Technical Support Analyst",
-    company: "Zippyttech Tecnologia e Innovacion",
+    company: "Zippyttech Tecnología e Innovación",
     description:
       "First professional engineering role, combining technical support, AWS cloud administration, containers, and CI/CD practices.",
     tags: ["AWS", "Docker", "GitLab", "CI/CD", "Linux", "Support"],
@@ -240,7 +240,7 @@ export const certifications = [
 
 export const hobbiesData = {
   intro:
-    "Outside the keyboard I also have a life: a business, training, pets, and a collection of stories. This section is less CV and more me, with my tastes, my marks, and my paths. Not everything that shapes a person fits into a job description, so this is where I share a little of what I enjoy, what moves me, and what makes me who I am.",
+    "Outside the keyboard I also have a life: a business, training, pets, and a collection of stories. This section is less CV and more me, with my interests, routines, and paths. Not everything that shapes a person fits into a job description, so this is where I share a little of what I enjoy, what moves me, and what makes me who I am.",
   signal: "Not everything in life is work.",
   stamps: [
     "Uruguay",
@@ -269,7 +269,7 @@ export const hobbiesData = {
       title: "Cycling",
       tag: "Road/Training",
       description:
-        "I love going out for road rides, training, feeling the air, the effort, and the freedom of the route. It is a calm and focused space where I connect with myself, disconnect from the noise, and enjoy movement, nature, and physical challenge.",
+        "I love going out for road rides, training, feeling the air, the effort, and the freedom of the route. It is a calm and focused space where I reconnect with myself, disconnect from the noise, and enjoy movement, nature, and physical challenge.",
       items: ["cycling", "training", "road bike", "bicycles"],
     },
     {
@@ -310,7 +310,7 @@ export const hobbiesData = {
       title: "One Piece",
       tag: "Anime/Manga",
       description:
-        "One Piece is my favorite anime. I love its story, characters, and the world Eiichiro Oda created. It has been with me for a long time and still surprises me with its twists, humor, friendship, adventure, and perseverance.",
+        "One Piece is my favorite anime. I love its story, characters, and the world Eiichiro Oda created. It has been with me for a long time and still surprises me with its twists, humor, and message of friendship, adventure, and perseverance.",
       items: ["One Piece", "Zoro", "Ace", "Whitebeard"],
     },
     {
@@ -332,7 +332,7 @@ export const hobbiesData = {
       title: "Driving",
       tag: "Focus/Passion",
       description:
-        "I love driving. I enjoy the control of the wheel, the speed, and the freedom of being on the road. Driving helps me disconnect and enjoy the journey. I liked it so much that I worked as a taxi and Uber driver just for the stories and the chance to meet people.",
+        "I love driving. I enjoy the control of the wheel, the rhythm of the road, and the freedom of being behind the wheel. Driving helps me disconnect and enjoy the journey. I liked it so much that I worked as a taxi and Uber driver for the stories and the chance to meet people.",
       items: ["Uber", "driving", "cycling", "passion", "cars"],
     },
   ],
