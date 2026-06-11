@@ -19,18 +19,33 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #cfe2df;
-  --panel: #e7f1ee;
-  --panel-soft: #d7e8e5;
-  --border: #5d9ea0;
-  --text: #10272b;
-  --muted: #38565b;
-  --accent-green: #007c5b;
-  --accent-mint: #008a70;
-  --accent-teal: #007980;
-  --accent-cyan: #006f96;
-  --accent-sky: #2353bd;
-  --accent-blue: #2b4fa8;
+  --bg: #eef4f2;
+  --bg-soft: #dfecea;
+  --surface: #fbfdfc;
+  --surface-alt: #f3f8f7;
+  --panel: var(--surface);
+  --panel-soft: var(--surface-alt);
+  --border: #6bbdb4;
+  --border-strong: #009f83;
+  --primary: #009f83;
+  --primary-hover: #007f69;
+  --primary-soft: #dff7f1;
+  --text: #102f2b;
+  --muted: #263634;
+  --text-soft: #384947;
+  --terminal-green: #009f83;
+  --terminal-cyan: #087f9f;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --shadow: rgba(0, 128, 105, 0.12);
+  --accent: var(--accent-green);
+  --accent-green: var(--terminal-green);
+  --accent-mint: #00a98f;
+  --accent-teal: #008f82;
+  --accent-cyan: var(--terminal-cyan);
+  --accent-sky: #256f94;
+  --accent-blue: #2457a6;
 }
 
 #home {
@@ -1658,33 +1673,34 @@ article h2 {
   background:
     radial-gradient(
       circle at top left,
-      rgba(0, 111, 150, 0.16),
+      rgba(0, 168, 132, 0.1),
       transparent 34%
     ),
-    linear-gradient(180deg, #d9ebe8, var(--bg));
+    linear-gradient(180deg, var(--bg), var(--bg-soft));
 }
 
 :root[data-theme="light"] section,
 :root[data-theme="light"] .terminal-section {
   background: linear-gradient(
     180deg,
-    rgba(232, 244, 241, 0.96),
-    rgba(207, 226, 223, 0.94)
+    color-mix(in srgb, var(--surface) 96%, var(--section-accent) 4%),
+    color-mix(in srgb, var(--bg-soft) 92%, var(--section-accent) 8%)
   );
   box-shadow:
-    0 0 24px rgba(0, 111, 150, 0.16),
+    0 8px 28px var(--shadow),
     inset 0 0 24px rgba(255, 255, 255, 0.24);
 }
 
 :root[data-theme="light"] .topbar,
 :root[data-theme="light"] .footer-bar,
 :root[data-theme="light"] .terminal-section-bar {
-  background: rgba(218, 235, 232, 0.96);
+  background: rgba(244, 247, 246, 0.88);
+  backdrop-filter: blur(12px);
 }
 
 :root[data-theme="light"] .terminal-section-command,
 :root[data-theme="light"] .project-window-bar {
-  background: rgba(190, 217, 214, 0.5);
+  background: color-mix(in srgb, var(--bg-soft) 86%, var(--section-accent) 14%);
 }
 
 :root[data-theme="light"] article,
@@ -1698,13 +1714,15 @@ article h2 {
 :root[data-theme="light"] .available-now,
 :root[data-theme="light"] .channels-card a {
   background:
-    linear-gradient(rgba(225, 240, 237, 0.92), rgba(218, 235, 232, 0.9)),
+    linear-gradient(rgba(255, 255, 255, 0.94), rgba(248, 251, 250, 0.92)),
     radial-gradient(
       circle at top right,
       color-mix(in srgb, var(--section-accent) 15%, transparent),
       transparent 48%
     );
-  box-shadow: inset 0 0 28px rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 28px color-mix(in srgb, var(--section-accent) 16%, transparent),
+    inset 0 0 28px rgba(255, 255, 255, 0.18);
 }
 
 :root[data-theme="light"] .terminal-path span b,
@@ -1715,16 +1733,46 @@ article h2 {
 :root[data-theme="light"] .project-preview,
 :root[data-theme="light"] .json-preview,
 :root[data-theme="light"] .highlights-list {
-  background: rgba(232, 244, 241, 0.9);
+  background: var(--surface-alt);
 }
 
 :root[data-theme="light"] .experience-detail {
-  background: rgba(224, 239, 236, 0.9);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 :root[data-theme="light"] .experience-detail:hover,
 :root[data-theme="light"] .experience-detail[open] {
-  background: rgba(215, 233, 230, 0.96);
+  background: color-mix(in srgb, var(--primary-soft) 42%, var(--surface));
+}
+
+:root[data-theme="light"] a,
+:root[data-theme="light"] .card-command,
+:root[data-theme="light"] .terminal-section-command {
+  color: var(--primary);
+}
+
+:root[data-theme="light"] a:hover,
+:root[data-theme="light"] .card-command:hover {
+  color: var(--primary-hover);
+}
+
+:root[data-theme="light"] .button-primary {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(0, 168, 132, 0.22);
+}
+
+:root[data-theme="light"] .button-primary:hover {
+  background: var(--primary-hover);
+}
+
+:root[data-theme="light"] .button-secondary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+:root[data-theme="light"] .button-secondary:hover {
+  background: var(--primary-soft);
 }
 
 :root[data-theme="light"] .crew-section {
@@ -1772,7 +1820,7 @@ article h2 {
 :root[data-theme="light"] #experience .tags span,
 :root[data-theme="light"] .about-values span,
 :root[data-theme="light"] .hobby-items li {
-  background: color-mix(in srgb, var(--section-accent) 11%, #e7f1ee);
+  background: color-mix(in srgb, var(--section-accent) 11%, var(--surface));
 }
 
 :root[data-theme="light"] .hobby-items li {
@@ -1783,13 +1831,13 @@ article h2 {
 
 :root[data-theme="light"] .availability-card,
 :root[data-theme="light"] .channels-card {
-  border-color: color-mix(in srgb, var(--section-accent) 46%, #6fa9a8);
+  border-color: color-mix(in srgb, var(--section-accent) 46%, var(--border));
 }
 
 :root[data-theme="light"] .available-now,
 :root[data-theme="light"] .channels-card a,
 :root[data-theme="light"] .contact-status {
-  border-color: color-mix(in srgb, var(--section-accent) 36%, #6fa9a8);
+  border-color: color-mix(in srgb, var(--section-accent) 36%, var(--border));
 }
 
 :root[data-theme="light"] .availability-list {
@@ -1798,12 +1846,16 @@ article h2 {
 
 :root[data-theme="light"] .availability-list p {
   padding: 0.78rem 0;
-  border-top-color: color-mix(in srgb, var(--section-accent) 32%, #7fb5b4);
+  border-top-color: color-mix(
+    in srgb,
+    var(--section-accent) 32%,
+    var(--border)
+  );
 }
 
 :root[data-theme="light"] .channels-card a:hover {
-  background: rgba(207, 226, 223, 0.96);
-  border-color: color-mix(in srgb, var(--section-accent) 58%, #4d8f91);
+  background: var(--primary-soft);
+  border-color: color-mix(in srgb, var(--section-accent) 58%, var(--border));
 }
 
 :root[data-theme="light"] .crew-map {
@@ -1815,6 +1867,316 @@ article h2 {
 
 :root[data-theme="light"] .crew-map p {
   color: #d7e6dc;
+}
+
+/* Light mode palette adaptation */
+:root[data-theme="light"] p,
+:root[data-theme="light"] ul,
+:root[data-theme="light"] li {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] .terminal-info p,
+:root[data-theme="light"] .hero-meta span,
+:root[data-theme="light"] .cert-year,
+:root[data-theme="light"] .cert-verify-list,
+:root[data-theme="light"] .experience-description,
+:root[data-theme="light"] .about-copy p,
+:root[data-theme="light"] .availability-list p,
+:root[data-theme="light"] .channels-card a span:not(.channel-icon),
+:root[data-theme="light"] .contact-status span {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] h1 {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(0, 159, 131, 0.18);
+}
+
+:root[data-theme="light"] .eyebrow,
+:root[data-theme="light"] .role,
+:root[data-theme="light"] .section-status {
+  color: var(--section-accent, var(--primary));
+}
+
+:root[data-theme="light"] section,
+:root[data-theme="light"] .terminal-section {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 94%, var(--bg-soft) 6%),
+    color-mix(in srgb, var(--bg-soft) 82%, var(--surface) 18%)
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 42%,
+    var(--border)
+  );
+  box-shadow:
+    0 10px 30px rgba(0, 80, 70, 0.1),
+    inset 0 0 18px rgba(255, 255, 255, 0.22);
+}
+
+:root[data-theme="light"] .terminal-section-bar {
+  background: rgba(251, 253, 252, 0.92);
+  border-bottom-color: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 30%,
+    var(--border)
+  );
+  backdrop-filter: blur(12px);
+}
+
+:root[data-theme="light"] .terminal-section-command {
+  background: color-mix(in srgb, var(--primary-soft) 42%, var(--surface) 58%);
+  color: var(--primary);
+}
+
+:root[data-theme="light"] .section-count {
+  color: var(--text-soft);
+}
+
+:root[data-theme="light"] .topbar,
+:root[data-theme="light"] .footer-bar {
+  background: rgba(238, 244, 242, 0.9);
+  border-color: color-mix(in srgb, var(--accent-cyan) 34%, var(--border));
+  backdrop-filter: blur(12px);
+}
+
+:root[data-theme="light"] nav a,
+:root[data-theme="light"] .desktop-nav a,
+:root[data-theme="light"] .mobile-nav a {
+  color: var(--text);
+}
+
+:root[data-theme="light"] nav a:hover,
+:root[data-theme="light"] nav a.active,
+:root[data-theme="light"] .desktop-nav a:hover,
+:root[data-theme="light"] .desktop-nav a.active {
+  color: var(--primary);
+}
+
+:root[data-theme="light"] nav a.active::after,
+:root[data-theme="light"] .desktop-nav a.active::after {
+  background: var(--primary);
+}
+
+:root[data-theme="light"] .terminal-path span {
+  color: var(--primary);
+  background: rgba(251, 253, 252, 0.72);
+}
+
+:root[data-theme="light"] .terminal-path span b {
+  background: var(--surface-alt);
+  color: var(--primary);
+}
+
+:root[data-theme="light"] .theme-toggle,
+:root[data-theme="light"] .language-switch {
+  background: var(--surface-alt);
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent-cyan) 42%, var(--border));
+  box-shadow: 0 6px 18px rgba(0, 80, 70, 0.08);
+}
+
+:root[data-theme="light"] .theme-toggle:hover,
+:root[data-theme="light"] .language-switch:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+:root[data-theme="light"] article,
+:root[data-theme="light"] .hero-terminal,
+:root[data-theme="light"] .about-layout,
+:root[data-theme="light"] .about-profile-card,
+:root[data-theme="light"] .cert-card,
+:root[data-theme="light"] .availability-card,
+:root[data-theme="light"] .channels-card,
+:root[data-theme="light"] .contact-status,
+:root[data-theme="light"] .available-now,
+:root[data-theme="light"] .channels-card a,
+:root[data-theme="light"] .experience-detail {
+  background:
+    linear-gradient(rgba(251, 253, 252, 0.92), rgba(243, 248, 247, 0.9)),
+    radial-gradient(
+      circle at top right,
+      color-mix(
+        in srgb,
+        var(--section-accent, var(--primary)) 10%,
+        transparent
+      ),
+      transparent 46%
+    );
+  border-color: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 36%,
+    var(--border)
+  );
+  box-shadow:
+    0 8px 24px rgba(0, 80, 70, 0.08),
+    inset 0 0 20px rgba(255, 255, 255, 0.18);
+}
+
+:root[data-theme="light"] .hero-terminal,
+:root[data-theme="light"] .about-profile-card,
+:root[data-theme="light"] .cert-card {
+  background: rgba(251, 253, 252, 0.88);
+}
+
+:root[data-theme="light"] .project-window-bar {
+  background: color-mix(in srgb, var(--primary-soft) 38%, var(--surface) 62%);
+  border-bottom-color: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 30%,
+    var(--border)
+  );
+  color: var(--text-soft);
+}
+
+:root[data-theme="light"] .project-preview,
+:root[data-theme="light"] .json-preview,
+:root[data-theme="light"] .highlights-list,
+:root[data-theme="light"] .channel-icon,
+:root[data-theme="light"] .contact-icon {
+  background: var(--surface-alt);
+  border-color: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 34%,
+    var(--border)
+  );
+}
+
+:root[data-theme="light"] .hero-meta span,
+:root[data-theme="light"] .hero-terminal span,
+:root[data-theme="light"] .about-profile-card span,
+:root[data-theme="light"] .channels-card a span:not(.channel-icon) {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] .hero-meta span::before,
+:root[data-theme="light"] .hero-terminal strong,
+:root[data-theme="light"] .about-profile-card strong,
+:root[data-theme="light"] .channels-card a span:not(.channel-icon) strong {
+  color: var(--section-accent, var(--primary));
+}
+
+:root[data-theme="light"] .project-window-tags span,
+:root[data-theme="light"] #experience .tags span,
+:root[data-theme="light"] .about-values span {
+  background: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 10%,
+    var(--surface)
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 28%,
+    var(--border)
+  );
+  color: var(--text);
+}
+
+:root[data-theme="light"] .experience-log::before {
+  background: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 34%,
+    var(--border)
+  );
+}
+
+:root[data-theme="light"] .log-dot {
+  background: var(--surface);
+  border-color: var(--section-accent, var(--primary));
+  box-shadow: 0 0 0 4px rgba(0, 159, 131, 0.08);
+}
+
+:root[data-theme="light"] .experience-detail:hover,
+:root[data-theme="light"] .experience-detail[open] {
+  background: color-mix(in srgb, var(--primary-soft) 38%, var(--surface) 62%);
+}
+
+:root[data-theme="light"] .contact-status span {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] .contact-status span:first-child,
+:root[data-theme="light"] .channels-card a em {
+  color: var(--section-accent, var(--primary));
+}
+
+:root[data-theme="light"] .contact-status span + span {
+  border-left-color: color-mix(
+    in srgb,
+    var(--section-accent, var(--primary)) 22%,
+    var(--border)
+  );
+}
+
+:root[data-theme="light"] #hobbies.crew-section {
+  border-color: color-mix(in srgb, var(--section-accent) 46%, #0f3d35);
+  background:
+    radial-gradient(
+      circle at 18% 16%,
+      rgba(246, 196, 83, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(rgba(9, 31, 28, 0.72), rgba(5, 22, 20, 0.82)),
+    url("../assets/backgrounds/crew-log-map.png") center / cover no-repeat,
+    repeating-linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.07) 0,
+      rgba(34, 197, 94, 0.07) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  box-shadow:
+    0 18px 40px rgba(3, 16, 20, 0.22),
+    inset 0 0 34px rgba(3, 16, 20, 0.32);
+}
+
+:root[data-theme="light"] #hobbies .terminal-section-bar {
+  background: rgba(5, 22, 20, 0.74);
+  border-bottom-color: color-mix(in srgb, var(--section-accent) 34%, #173c38);
+}
+
+:root[data-theme="light"] #hobbies .terminal-section-command {
+  background: rgba(5, 22, 20, 0.5);
+  color: #d7e6dc;
+}
+
+:root[data-theme="light"] #hobbies .section-count {
+  color: #d7e6dc;
+}
+
+:root[data-theme="light"] #hobbies .crew-map,
+:root[data-theme="light"] #hobbies .hobby-card {
+  background:
+    linear-gradient(rgba(12, 41, 36, 0.84), rgba(7, 29, 26, 0.9)),
+    radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--section-accent) 18%, transparent),
+      transparent 48%
+    );
+  border-color: color-mix(in srgb, var(--section-accent) 56%, #173c38);
+  box-shadow:
+    0 18px 34px rgba(3, 16, 20, 0.22),
+    inset 0 0 28px rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme="light"] #hobbies .crew-map p,
+:root[data-theme="light"] #hobbies .hobby-card p {
+  color: #d7e6dc;
+}
+
+:root[data-theme="light"] #hobbies .hobby-index {
+  background: rgba(16, 39, 43, 0.94);
+  color: var(--section-accent);
+}
+
+:root[data-theme="light"] #hobbies .hobby-items li,
+:root[data-theme="light"] #hobbies .crew-stamps span {
+  color: #dbe9e5;
+  background: rgba(5, 27, 24, 0.68);
+  border-color: color-mix(in srgb, var(--section-accent) 50%, #2d5a51);
 }
 
 /* Responsive */
