@@ -15,6 +15,18 @@
       "command": "ver código →",
       "image": "/assets/projects/portfolio.png",
       "tags": ["Astro", "CSS", "GitHub Pages"]
-    }
+    },
+    {
+    "title": "PIF - Procesador Inteligente de Facturas",
+    "description": "Sistema inteligente para el procesamiento automático de facturas desarrollado con Google Apps Script y Gemini Vision. Extrae información desde imágenes, valida los datos, detecta duplicados, organiza gastos por período y genera registros compatibles con Google Sheets y Notion.",
+    "url": "https://github.com/pm3ndoza/PIF",
+    "command": "ver código →",
+    "image": "/assets/projects/pif.png",
+    "tags": [
+      "Google Apps Script",
+      "Gemini Vision",
+      "Google Sheets"
+    ]
+  }
   ]
 }
