@@ -83,6 +83,19 @@ export const projects = [
     image: "/assets/projects/portfolio.png",
     tags: ["Astro", "CSS", "GitHub Pages"],
   },
+  {
+    title: "PIF - Invoice System Processor",
+    description:
+      "Intelligent invoice processing system built with Google Apps Script and Gemini Vision. It automatically extracts data from invoice images, validates results, detects duplicates, organizes expenses by accounting period, and generates structured records ready for Google Sheets and Notion.",
+    url: "https://github.com/pm3ndoza/PIF",
+    command: "view code →",
+    image: "/assets/projects/portfolio.png",
+    tags:  [
+      "Google Apps Script",
+      "Gemini Vision",
+      "Google Sheets"
+    ],
+  },
 ];
 
 export const experience = [
