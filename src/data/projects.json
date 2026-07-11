@@ -27,6 +27,18 @@
       "Gemini Vision",
       "Google Sheets"
     ]
+  },
+  {
+    "title": "Terraform Learning Labs",
+    "description": "Repositorio práctico para aprender Terraform mediante laboratorios progresivos y la construcción de una plataforma EKS modular. Incluye módulos reutilizables, buenas prácticas y escenarios reales orientados a infraestructura como código.",
+    "url": "https://github.com/pm3ndoza/tf-labs",
+    "command": "ver código →",
+    "image": "/assets/projects/tf.png",
+    "tags": [
+      "Terraform",
+      "AWS",
+      "Infrastructure as Code"
+    ]
   }
   ]
 }
