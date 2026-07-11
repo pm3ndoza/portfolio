@@ -96,6 +96,18 @@ export const projects = [
       "Google Sheets"
     ],
   },
+  {
+    "title": "Terraform Learning Labs",
+    "description": "Comprehensive learning platform designed to master Terraform through progressive labs and the development of a modular Amazon EKS platform. Covers reusable modules, infrastructure as code best practices, and real-world deployment scenarios.",
+    "url": "https://github.com/pm3ndoza/tf-labs",
+    "command": "view source →",
+    "image": "/assets/projects/tf.png",
+    "tags": [
+      "Terraform",
+      "AWS",
+      "Infrastructure as Code"
+    ]
+  }
 ];
 
 export const experience = [

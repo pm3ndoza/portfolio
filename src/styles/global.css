@@ -1885,7 +1885,7 @@ article h2 {
 :root[data-theme="light"] .availability-list p,
 :root[data-theme="light"] .channels-card a span:not(.channel-icon),
 :root[data-theme="light"] .contact-status span {
-  color: var(--muted);
+  color: var(--muted); 
 }
 
 :root[data-theme="light"] h1 {
